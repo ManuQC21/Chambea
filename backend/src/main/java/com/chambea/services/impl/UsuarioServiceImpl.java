@@ -37,6 +37,13 @@ public class UsuarioServiceImpl implements UsuarioService {
     }
 
     @Override
+    public Usuario modificarPassword(String email, String password) {
+        Usuario usuario = usuarioRepository.getByEmail(email);
+        usuario.setPassword(password);
+        return usuarioRepository.save(usuario);
+    }
+
+    @Override
     public void eliminarUsuario(Integer idUsuario) {
 
     }

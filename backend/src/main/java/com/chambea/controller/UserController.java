@@ -43,4 +43,13 @@ public class UserController {
         Usuario usuario = this.usuarioService.obtenerUsuarioPorEmail(email);
         return new ResponseEntity<Usuario>(usuario, HttpStatus.OK);
     }
+
+    @PutMapping("/reestablecerPassword")
+    public ResponseEntity<Usuario> reestablecerPassword(
+            @RequestParam String email,
+            @RequestParam String password
+    ){
+        Usuario usuario = usuarioService.modificarPassword(email,password);
+        return new ResponseEntity<Usuario>(usuario, HttpStatus.OK);
+    }
 }
