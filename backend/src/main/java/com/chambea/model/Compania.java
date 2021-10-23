@@ -12,13 +12,10 @@ public class Compania {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @Column(name="id_compania")
+    private Integer idCompania;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name="fecha_inicio", nullable = false)
-    private Calendar fecha_inicio;
+    @Column(name="nombre", nullable = false, length = 64)
+    private String nombre;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name="fecha_fin", nullable = false)
-    private Calendar fecha_fin;
 }
