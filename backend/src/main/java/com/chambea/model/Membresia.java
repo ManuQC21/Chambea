@@ -22,4 +22,12 @@ public class Membresia {
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name="fecha_fin", nullable = false)
     private Calendar fecha_fin;
+
+    @ManyToOne
+    @JoinColumn(
+            name="id_usuario",
+            nullable = false,
+            foreignKey = @ForeignKey(name="FK_membresia_usuario")
+    )
+    private Usuario usuario;
 }
