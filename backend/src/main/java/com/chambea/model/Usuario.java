@@ -23,7 +23,7 @@ public class Usuario {
 
     @Size(min=4, message="El usuario debe tener 4 caracteres")
     @Column(name="nombre_usuario", nullable = false)
-    private String nombre_usuario;
+    private String nombreUsuario;
 
     @Size(min=4, message="El nombre debe tener 4 caracteres")
     @Column(name="nombres", nullable=false, length=64)

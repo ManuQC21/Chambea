@@ -1,4 +1,4 @@
-package com.chambea.respositories;
+package com.chambea.repositories;
 
 import com.chambea.model.Duracion;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -1,4 +1,4 @@
-package com.chambea.respositories;
+package com.chambea.repositories;
 
 import com.chambea.model.Membresia;
 import org.springframework.data.jpa.repository.JpaRepository;
