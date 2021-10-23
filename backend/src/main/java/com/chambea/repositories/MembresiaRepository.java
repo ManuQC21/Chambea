@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface MembresiaRepository extends JpaRepository<Membresia, Integer> {
+    Membresia getByIdMembresia(Integer idMembresia);
 }
