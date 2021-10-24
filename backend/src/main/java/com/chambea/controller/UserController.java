@@ -44,6 +44,12 @@ public class UserController {
         return new ResponseEntity<Usuario>(usuario, HttpStatus.OK);
     }
 
+    @GetMapping("/byId")
+    public ResponseEntity<Usuario> obtenerUsuarioPorId(@RequestParam Integer id){
+        Usuario usuario = this.usuarioService.obtenerUsuarioPorId(id).get();
+        return new ResponseEntity<Usuario>(usuario, HttpStatus.OK);
+    }
+
     @PutMapping("/reestablecerPassword")
     public ResponseEntity<Usuario> reestablecerPassword(
             @RequestParam String email,

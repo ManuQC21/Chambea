@@ -1,5 +1,7 @@
 package com.chambea.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -15,7 +17,7 @@ public class Usuario {
     @Column(name="id_usuario")
     private Integer idUsuario;
 
-    @Column(name="email", nullable = false)
+    @Column(name="email", nullable = false, unique = true)
     private String email;
 
     @Column(name="password", nullable = false)
@@ -33,10 +35,12 @@ public class Usuario {
     @Column(name="apellidos", nullable=false, length=64)
     private String apellidos;
 
-    @OneToOne(mappedBy = "usuario")
+    @JsonIgnore
+    @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL)
     private Freelancer freelancer;
 
-    @OneToOne(mappedBy = "usuario")
+    @JsonIgnore
+    @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL)
     private Empleador empleador;
 
 

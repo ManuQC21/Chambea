@@ -5,6 +5,8 @@ import com.chambea.repositories.MembresiaRepository;
 import com.chambea.services.MembresiaServices;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class MembresiaServiceslmpl implements MembresiaServices {
 
@@ -18,5 +20,10 @@ public class MembresiaServiceslmpl implements MembresiaServices {
     @Override
     public void eliminarMembresia(Integer idMembresia) {
 
+    }
+
+    @Override
+    public Optional<Membresia> obtenerMembresiaPorId(Integer id) {
+        return membresiaRepository.findById(id);
     }
 }

@@ -1,5 +1,8 @@
 package com.chambea.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -15,7 +18,9 @@ public class Freelancer {
     @Column(name="id_freelancer")
     private Integer idFreelancer;
 
-    @OneToOne
+    @OneToOne(
+            //fetch = FetchType.LAZY
+    )
     @JoinColumn(
             name = "id_usuario",
             nullable = false,

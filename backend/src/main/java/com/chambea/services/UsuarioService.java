@@ -12,4 +12,5 @@ public interface UsuarioService {
     Optional<Usuario> obtenerUsuarioPorUsuarioYContrasena(String username, String password);
     Usuario modificarPassword(String email, String password);
     void eliminarUsuario(Integer idUsuario);
+    Optional<Usuario> obtenerUsuarioPorId(Integer id);
 }
