@@ -1,0 +1,55 @@
+
+<div class="row">
+  <div class="col-md-offset-3 mx-auto">
+    <form
+      (ngSubmit)="login()"
+      autocomplete="off"
+      [formGroup]="form"
+      #frmLibro="ngForm"
+    >
+      <mat-form-field appearance="outline" class="d-block">
+        <mat-label>
+          Usuario
+        </mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="Usuario"
+          formControlName="usuario"
+        >
+
+        <mat-error *ngIf="form.controls.usuario.hasError('required')">
+          Este campo es obligatorio
+        </mat-error>
+        <mat-error *ngIf="form.controls.usuario.hasError('minlength')">
+          Debe tener al menos 5 caracteres
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="d-block">
+        <mat-label>
+          Contraseña
+        </mat-label>
+        <input
+          matInput
+          type="password"
+          placeholder="Contraseña"
+          formControlName="password"
+        >
+        <mat-error *ngIf="form.controls.password.hasError('required')">
+          Este campo es obligatorio
+        </mat-error>
+      </mat-form-field>
+
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        class="ms-2"
+        [disabled]="frmLibro.invalid"
+      >
+        Iniciar Sesion
+      </button>
+    </form>
+  </div>
+</div>

@@ -14,6 +14,9 @@ public class Trabajo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idTrabajo;
 
+    @Column(name="titulo",nullable = false, length = 100)
+    private String titulo;
+
     @Column(name="descripcion", nullable = false, length = 256)
     private String descripcion;
 
@@ -24,4 +27,6 @@ public class Trabajo {
             foreignKey = @ForeignKey(name="FK_trabajo_duracion")
     )
     private Duracion duracion;
+
+
 }

@@ -20,7 +20,7 @@ public class TieneHabilidad {
             nullable = false,
             foreignKey = @ForeignKey(name="FK_tiene_habilidad")
     )
-    private Habilidad idHabilidad;
+    private Habilidad habilidad;
 
     @ManyToOne
     @JoinColumn(

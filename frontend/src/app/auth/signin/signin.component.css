@@ -1,0 +1,11 @@
+
+
+.card {
+  background-color: burlywood;
+  max-width: 500px;
+}
+
+.card > .card-header{
+  font-size: 1rem;
+  background-color: #ff284f;
+}

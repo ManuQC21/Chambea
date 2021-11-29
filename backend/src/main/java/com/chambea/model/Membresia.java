@@ -17,11 +17,11 @@ public class Membresia {
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name="fecha_inicio", nullable = false)
-    private Calendar fecha_inicio;
+    private Calendar fechaInicio;
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name="fecha_fin", nullable = false)
-    private Calendar fecha_fin;
+    private Calendar fechaFin;
 
     @ManyToOne
     @JoinColumn(

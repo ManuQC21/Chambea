@@ -19,7 +19,7 @@ public class Mensaje {
             nullable = false,
             foreignKey = @ForeignKey(name="FK_mensaje_freelancer")
     )
-    private Freelancer idFreelancer;
+    private Freelancer freelancer;
 
     @ManyToOne
     @JoinColumn(
@@ -27,7 +27,7 @@ public class Mensaje {
             nullable = false,
             foreignKey = @ForeignKey(name="FK_mensaje_empleador")
     )
-    private Empleador idEmpleador;
+    private Empleador empleador;
 
     @ManyToOne
     @JoinColumn(

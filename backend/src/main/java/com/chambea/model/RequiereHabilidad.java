@@ -18,7 +18,7 @@ public class RequiereHabilidad {
             nullable = false,
             foreignKey = @ForeignKey(name="FK_requiere_habilidad")
     )
-    private Habilidad idHabilidad;
+    private Habilidad habilidad;
 
     @ManyToOne
     @JoinColumn(

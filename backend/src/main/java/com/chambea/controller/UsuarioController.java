@@ -11,41 +11,24 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/user")
-public class UserController {
+public class UsuarioController {
 
     private final UsuarioService usuarioService;
 
-    UserController(UsuarioService usuarioService){
+    UsuarioController(UsuarioService usuarioService){
         this.usuarioService = usuarioService;
     }
 
-    @PostMapping
-    public ResponseEntity<Usuario> registrarUsuario(@Valid @RequestBody Usuario usuario){
-        Usuario usuarioNew = this.usuarioService.registrarUsuario(usuario);
-        return new ResponseEntity<Usuario>(usuarioNew, HttpStatus.CREATED);
-    }
 
-    @GetMapping("/iniciarsesion")
-    public ResponseEntity<String> iniciarSesion(
-            @RequestParam String usuario,
-            @RequestParam String password){
 
-        Optional<Usuario> usuarioLogeado = usuarioService.obtenerUsuarioPorUsuarioYContrasena(usuario, password);
-        if (usuarioLogeado.isPresent()){
-            return new ResponseEntity<String>("Credenciales validas", HttpStatus.OK);
-        }
-
-        return new ResponseEntity<>("Credenciales invalidas", HttpStatus.BAD_GATEWAY);
-    }
-
-    @GetMapping("/{email}")
+    @GetMapping("/byEmail/{email}")
     public ResponseEntity<Usuario> obtenerUsuarioPorEmail(@PathVariable("email") String email){
         Usuario usuario = this.usuarioService.obtenerUsuarioPorEmail(email);
         return new ResponseEntity<Usuario>(usuario, HttpStatus.OK);
     }
 
-    @GetMapping("/byId")
-    public ResponseEntity<Usuario> obtenerUsuarioPorId(@RequestParam Integer id){
+    @GetMapping("/{id}")
+    public ResponseEntity<Usuario> obtenerUsuarioPorId(@PathVariable Integer id){
         Usuario usuario = this.usuarioService.obtenerUsuarioPorId(id).get();
         return new ResponseEntity<Usuario>(usuario, HttpStatus.OK);
     }
