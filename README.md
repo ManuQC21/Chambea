@@ -6,11 +6,11 @@ Como empleador, podrás publicar ofertas laborales, y esperar las propuestas de 
 
 Como trabajador, podrás crear y modificar tu perfil, seleccionando aquellas habilidades que deseas destacar; y así llamar la atención de potenciales empleadores. También podrás buscar entre las ofertas laborales y postularte a aquellas que creas conveniente.
 
-#Perusable
+# Perusable
 
 Perusable es el nombre de nuestra startup, somos un grupo de estudiantes de la carrera de Ingeniería de Computación y Sistemas de la UPAO; los cuales con los conocimientos adquiridos a lo largo de los semestres académicos, buscamos ponernos a prueba desarrollando una aplicación web para la oferta de servicios.
 
-#	:handshaking:	Integrantes
+#	:ok_hand:	Integrantes
 
 - Siccha Siccha Luis Gabriel
 - Grados Urtecho Gabriel Andre
@@ -21,19 +21,19 @@ Perusable es el nombre de nuestra startup, somos un grupo de estudiantes de la c
 
 #	:construction:	 Sobre la aplicación
 ##	:gear:	Tecnologías
-###Backend
+### Backend
 Nuestro backend está constituido por una base de datos, construida haciendo uso del sistema gestor de base de datos **PostgreSQL**; y una **API RESTful** escrita en java, haciendo uso del framework Spring y los módulos mencionados a continuación:
 - **Spring Boot:** Nos brinda la posibilidad de configurar nuestra aplicación de forma rápida y sencilla, haciendo uso de los starters proporcionados por Spring Boot, podemos, de forma sencilla, agregar a nuestro proyecto las dependencias que veamos necesarias. Gracias a esto, podemos ahorrarnos el tiempo de configuración y enfocarnos principalmente en el desarrollo de la aplicación en sí.
 
 - **Spring MVC:** Un framework orientado a HTTP que sigue el patrón Modelo Vista Controlador, nos permite implementar métodos los cuales pueden ser accedidos mediante solicitudes HTTP.
 
 
-###Frontend
+### Frontend
 - Nuestro Frontend es una aplicación web de una sola página; desarrollada haciendo uso del framework **Angular**, escrito en TypeScript.
 
 
 #	:rocket:	Uso 
-###Backend
+## Backend
 Para poder ejecutar el backend, es necesario contar con las siguientes herramientas:
 -	**Java (JDK 17)**
 -	**Apache Maven 3.8.2**
@@ -51,7 +51,7 @@ Luego, simplemente ejecutamos el jar generado anteriormente.
 ```bash
 java -jar target\API-0.0.1-SNAPSHOT.jar
 ```
-###Frontend
+## Frontend
 Para poder ejecutar el frontend, es necesario tener instalado el gestor de paquetes npm (Node Package Manager).
 
 -	**npm (6.14.15)**
