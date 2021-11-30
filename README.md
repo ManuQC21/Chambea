@@ -6,11 +6,11 @@ Como empleador, podrás publicar ofertas laborales, y esperar las propuestas de 
 
 Como trabajador, podrás crear y modificar tu perfil, seleccionando aquellas habilidades que deseas destacar; y así llamar la atención de potenciales empleadores. También podrás buscar entre las ofertas laborales y postularte a aquellas que creas conveniente.
 
-# Perusable
+# :thought_balloon: Perusable
 
 Perusable es el nombre de nuestra startup, somos un grupo de estudiantes de la carrera de Ingeniería de Computación y Sistemas de la UPAO; los cuales con los conocimientos adquiridos a lo largo de los semestres académicos, buscamos ponernos a prueba desarrollando una aplicación web para la oferta de servicios.
 
-#	:ok_hand:	Integrantes
+#	:alien:	Integrantes
 
 - Siccha Siccha Luis Gabriel
 - Grados Urtecho Gabriel Andre
@@ -19,16 +19,16 @@ Perusable es el nombre de nuestra startup, somos un grupo de estudiantes de la c
 - Quispe Cueva Manuel Alberto
 - Campero Barr Carlos Daniel
 
+
 #	:construction:	 Sobre la aplicación
 ##	:gear:	Tecnologías
-### Backend
+### Backend ![Java](https://img.shields.io/badge/-java-E34A86?style=flat-square&logo=java) ![pring](https://img.shields.io/badge/-Spring-black?style=flat-square&logo=spring) ![Maven](https://img.shields.io/badge/-maven-C71A36?style=flat-square&logo=apache%20maven) ![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-E34F26?style=flat-square&logo=postgresql)  
 Nuestro backend está constituido por una base de datos, construida haciendo uso del sistema gestor de base de datos **PostgreSQL**; y una **API RESTful** escrita en java, haciendo uso del framework Spring y los módulos mencionados a continuación:
 - **Spring Boot:** Nos brinda la posibilidad de configurar nuestra aplicación de forma rápida y sencilla, haciendo uso de los starters proporcionados por Spring Boot, podemos, de forma sencilla, agregar a nuestro proyecto las dependencias que veamos necesarias. Gracias a esto, podemos ahorrarnos el tiempo de configuración y enfocarnos principalmente en el desarrollo de la aplicación en sí.
 
 - **Spring MVC:** Un framework orientado a HTTP que sigue el patrón Modelo Vista Controlador, nos permite implementar métodos los cuales pueden ser accedidos mediante solicitudes HTTP.
 
-
-### Frontend
+### Frontend ![Angular](https://img.shields.io/badge/-angular-C71A36?style=flat-square&logo=angular) ![TypeScript](https://img.shields.io/badge/-typescript-white?style=flat-square&logo=typescript)
 - Nuestro Frontend es una aplicación web de una sola página; desarrollada haciendo uso del framework **Angular**, escrito en TypeScript.
 
 
