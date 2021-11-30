@@ -37,7 +37,7 @@ Nuestro backend está constituido por una base de datos, construida haciendo uso
 Para poder ejecutar el backend, es necesario contar con las siguientes herramientas:
 -	**Java (JDK 17)**
 -	**Apache Maven 3.8.2**
--	** PostgreSQL**
+-	** PostgreSQL **
 
 Una vez en nuestro repositorio local, simplemente ejecutamos los siguientes comandos:
 ```bash
