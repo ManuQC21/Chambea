@@ -10,7 +10,7 @@ Como trabajador, podrás crear y modificar tu perfil, seleccionando aquellas hab
 
 Perusable es el nombre de nuestra startup, somos un grupo de estudiantes de la carrera de Ingeniería de Computación y Sistemas de la UPAO; los cuales con los conocimientos adquiridos a lo largo de los semestres académicos, buscamos ponernos a prueba desarrollando una aplicación web para la oferta de servicios.
 
-#	:alien:	Integrantes
+##	:alien:	Integrantes
 
 - Siccha Siccha Luis Gabriel
 - Grados Urtecho Gabriel Andre
