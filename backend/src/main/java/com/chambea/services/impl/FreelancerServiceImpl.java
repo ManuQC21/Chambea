@@ -17,27 +17,27 @@ public class FreelancerServiceImpl implements FreelancerService {
     }
 
     @Override
-    public Freelancer registrarFreelancer(Freelancer freelancer) {
+    public Freelancer createFreelancer(Freelancer freelancer) {
         return freelancerRepository.save(freelancer);
     }
 
     @Override
-    public Freelancer actualizarFreelancer(Freelancer freelancer) {
+    public Freelancer updateFreelancer(Freelancer freelancer) {
         return this.freelancerRepository.save(freelancer);
     }
 
     @Override
-    public Freelancer obtenerPorId(Integer id) {
+    public Freelancer getFreelancer(Integer id) {
         return freelancerRepository.getById(id);
     }
 
     @Override
-    public void eliminarFreelancer(Integer id) {
+    public void deleteFreelancer(Integer id) {
         this.freelancerRepository.deleteById(id);
     }
 
     @Override
-    public List<Freelancer> listarFreelancers() {
+    public List<Freelancer> getAll() {
         return this.freelancerRepository.findAll();
     }
 }

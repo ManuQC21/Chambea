@@ -7,9 +7,9 @@ import java.util.List;
 
 public interface FreelancerService {
 
-    Freelancer registrarFreelancer(Freelancer freelancer);
-    Freelancer actualizarFreelancer(Freelancer freelancer);
-    Freelancer obtenerPorId(Integer id);
-    void eliminarFreelancer(Integer id);
-    List<Freelancer> listarFreelancers();
+    Freelancer createFreelancer(Freelancer freelancer);
+    List<Freelancer> getAll();
+    Freelancer getFreelancer(Integer id);
+    Freelancer updateFreelancer(Freelancer freelancer);
+    void deleteFreelancer(Integer id);
 }

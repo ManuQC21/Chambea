@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface TrabajoService {
 
-    Trabajo resgitrarTrabajo(Trabajo trabajo);
-    Trabajo modificarTrabajo(Trabajo trabajo);
-    Trabajo obtenerPorId(Integer id);
-    void eliminarTrabajo(Integer id);
-    List<Trabajo> listarTrabajos();
+    Trabajo createTrabajo(Trabajo trabajo);
+    List<Trabajo> getAll();
+    Trabajo getTrabajo(Integer id);
+    Trabajo updateTrabajo(Trabajo trabajo);
+    void deleteTrabajo(Integer id);
 }

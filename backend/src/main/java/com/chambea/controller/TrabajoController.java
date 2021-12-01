@@ -20,30 +20,30 @@ public class TrabajoController {
 
     @PostMapping
     public ResponseEntity<Trabajo> createTrabajo(@RequestBody Trabajo trabajo) {
-        Trabajo savedTrabajo = this.trabajoService.resgitrarTrabajo(trabajo);
+        Trabajo savedTrabajo = this.trabajoService.createTrabajo(trabajo);
         return new ResponseEntity<Trabajo>(savedTrabajo, HttpStatus.CREATED);
     }
 
     @GetMapping
     public ResponseEntity<List<Trabajo>> getAll(){
-        return new ResponseEntity<List<Trabajo>>(this.trabajoService.listarTrabajos(), HttpStatus.OK);
+        return new ResponseEntity<List<Trabajo>>(this.trabajoService.getAll(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Trabajo> get(@PathVariable("id") Integer id){
-        Trabajo trabajo = this.trabajoService.obtenerPorId(id);
+        Trabajo trabajo = this.trabajoService.getTrabajo(id);
         return new ResponseEntity<Trabajo>(trabajo, HttpStatus.CREATED);
     }
 
     @PutMapping
     public ResponseEntity<Trabajo> updateTrabajo(@RequestBody Trabajo trabajo){
-        Trabajo trabajo1 = this.trabajoService.modificarTrabajo(trabajo);
+        Trabajo trabajo1 = this.trabajoService.updateTrabajo(trabajo);
         return new ResponseEntity<Trabajo>(trabajo1, HttpStatus.OK);
     }
 
     @DeleteMapping({"/{id}"})
     public ResponseEntity<Void> deleteTrabajo(@PathVariable("id") Integer id){
-        this.trabajoService.eliminarTrabajo(id);
+        this.trabajoService.deleteTrabajo(id);
         return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
     }
 }

@@ -1,4 +1,4 @@
-package com.chambea.security.services;
+package com.chambea.security;
 
 import com.chambea.model.Usuario;
 import lombok.Getter;

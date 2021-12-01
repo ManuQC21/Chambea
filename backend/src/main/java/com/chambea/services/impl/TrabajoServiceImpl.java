@@ -17,27 +17,27 @@ public class TrabajoServiceImpl implements TrabajoService {
     }
 
     @Override
-    public Trabajo resgitrarTrabajo(Trabajo trabajo) {
+    public Trabajo createTrabajo(Trabajo trabajo) {
         return trabajoRepository.save(trabajo);
     }
 
     @Override
-    public Trabajo modificarTrabajo(Trabajo trabajo) {
+    public Trabajo updateTrabajo(Trabajo trabajo) {
         return  trabajoRepository.save(trabajo);
     }
 
     @Override
-    public Trabajo obtenerPorId(Integer id) {
+    public Trabajo getTrabajo(Integer id) {
         return trabajoRepository.getById(id);
     }
 
     @Override
-    public void eliminarTrabajo(Integer id) {
+    public void deleteTrabajo(Integer id) {
         this.trabajoRepository.deleteById(id);
     }
 
     @Override
-    public List<Trabajo> listarTrabajos() {
+    public List<Trabajo> getAll() {
         return this.trabajoRepository.findAll();
     }
 }
