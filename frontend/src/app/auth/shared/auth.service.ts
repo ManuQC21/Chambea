@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpParams} from "@angular/common/http";
+import {HttpClient, HttpParams, HttpResponse} from "@angular/common/http";
 import {environment} from "../../../environments/environment";
 import {Observable} from "rxjs";
 import {Usuario} from "./usuario.model";
+import {UserLoginModel} from "./user-login.model";
+import {UsuarioDto} from "../../model/usuarioDto";
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +18,14 @@ export class AuthService {
   get(id: number): Observable<Usuario>{
     return this.http.get<Usuario>(
       `${this.apiBase}/${id}`
+    )
+  }
+
+  log(creds: UserLoginModel): Observable<any>{
+    return this.http.post<any>(
+      `${this.apiBase}/test`,
+      creds,
+      {observe : "response"}
     )
   }
 

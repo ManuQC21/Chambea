@@ -29,17 +29,25 @@ public class UsuarioController {
         return new ResponseEntity<List<Usuario>>(this.usuarioService.getAll(), HttpStatus.OK);
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Usuario> obtenerUsuarioPorId(@PathVariable Integer id){
+        Usuario usuario = this.usuarioService.getUsuario(id).get();
+        return new ResponseEntity<Usuario>(usuario, HttpStatus.OK);
+    }
+
+    @PutMapping
+    public ResponseEntity<Usuario> updateUsuario(@RequestBody Usuario usuario){
+        return new ResponseEntity<>(this.usuarioService.updateUsuario(usuario), HttpStatus.OK);
+    }
+
+
+
     @GetMapping("/byEmail/{email}")
     public ResponseEntity<Usuario> obtenerUsuarioPorEmail(@PathVariable("email") String email){
         Usuario usuario = this.usuarioService.getUserByEmail(email);
         return new ResponseEntity<Usuario>(usuario, HttpStatus.OK);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Usuario> obtenerUsuarioPorId(@PathVariable Integer id){
-        Usuario usuario = this.usuarioService.getUsuario(id).get();
-        return new ResponseEntity<Usuario>(usuario, HttpStatus.OK);
-    }
 
     @PutMapping("/reestablecerPassword")
     public ResponseEntity<Usuario> reestablecerPassword(

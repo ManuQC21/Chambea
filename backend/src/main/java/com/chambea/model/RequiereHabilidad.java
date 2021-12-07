@@ -10,7 +10,8 @@ public class RequiereHabilidad {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idTieneHabilidad;
+    @Column(name="id_requiere_habilidad")
+    private Integer idRequiereHabilidad;
 
     @ManyToOne
     @JoinColumn(
@@ -26,5 +27,5 @@ public class RequiereHabilidad {
             nullable = false,
             foreignKey = @ForeignKey(name="FK_requiere_trabajo")
     )
-    private Trabajo trabajo;
+    private Trabajo idTrabajo;
 }

@@ -1,0 +1,41 @@
+<mat-toolbar color="primary" *ngIf="currentUser">
+  <mat-toolbar-row class="container">
+    <img src="assets/img/logo.png" alt="logo" class="logo">
+    <span class="spacer-small"></span>
+    <span matPrefix></span>
+    <mat-form-field floatLabel="never">
+      <input matInput type="search" placeholder="Busqueda">
+    </mat-form-field>
+
+    <span class="spacer">
+    </span>
+
+    <button mat-button [mat-menu-trigger-for]="menuT">Trabajos</button>
+    <mat-menu #menuT="matMenu">
+      <button mat-menu-item>Mis Trabajos</button>
+      <button mat-menu-item>Publicar un trabajo</button>
+    </mat-menu>
+
+    <button mat-button [mat-menu-trigger-for]="menuF">Freelancers</button>
+    <mat-menu #menuF="matMenu">
+      <button mat-menu-item>Descubrir</button>
+      <button mat-menu-item>Favoritos</button>
+    </mat-menu>
+
+    <button mat-button>Mensajes</button>
+
+    <mat-divider class="divider" [vertical]="true"></mat-divider>
+
+    <button mat-button [mat-menu-trigger-for]="menuP">
+      <mat-icon>
+        person
+      </mat-icon>
+      <mat-label>{{currentUser.nombres}}</mat-label>
+    </button>
+    <mat-menu #menuP="matMenu">
+      <button mat-menu-item>Conviertete en Freelancer</button>
+      <button mat-menu-item>Perfil</button>
+    </mat-menu>
+
+  </mat-toolbar-row>
+</mat-toolbar>

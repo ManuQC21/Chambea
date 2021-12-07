@@ -24,7 +24,7 @@ public class FreelancerController {
         return new ResponseEntity<Freelancer>(free, HttpStatus.CREATED);
     }
 
-    @GetMapping()
+    @GetMapping
     public ResponseEntity<List<Freelancer>> getAll(){
         return new ResponseEntity<List<Freelancer>>(this.freelancerService.getAll(), HttpStatus.OK);
     }

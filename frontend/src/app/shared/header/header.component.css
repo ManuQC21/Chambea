@@ -1,0 +1,11 @@
+mat-toolbar{
+  padding: 7px 10px;
+}
+
+.logo{
+  max-height: 40px;
+}
+
+.spacer-small{
+  margin-left: 40px;
+}

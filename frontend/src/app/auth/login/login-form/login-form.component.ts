@@ -13,7 +13,7 @@ export class LoginFormComponent implements OnInit {
 
 
   form : FormGroup = this.formBuilder.group({
-    usuario: [
+    username: [
       '',[
         Validators.required,
         Validators.minLength(5)

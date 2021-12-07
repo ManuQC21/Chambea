@@ -15,13 +15,13 @@
           matInput
           type="text"
           placeholder="Usuario"
-          formControlName="usuario"
+          formControlName="username"
         >
 
-        <mat-error *ngIf="form.controls.usuario.hasError('required')">
+        <mat-error *ngIf="form.controls.username.hasError('required')">
           Este campo es obligatorio
         </mat-error>
-        <mat-error *ngIf="form.controls.usuario.hasError('minlength')">
+        <mat-error *ngIf="form.controls.username.hasError('minlength')">
           Debe tener al menos 5 caracteres
         </mat-error>
       </mat-form-field>

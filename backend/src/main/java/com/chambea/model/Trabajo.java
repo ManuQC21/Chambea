@@ -4,6 +4,7 @@ package com.chambea.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Data
@@ -26,7 +27,20 @@ public class Trabajo {
             nullable = false,
             foreignKey = @ForeignKey(name="FK_trabajo_duracion")
     )
-    private Duracion duracion;
+    private Duracion idDuracion;
+
+    @ManyToOne
+    @JoinColumn(
+            name="id_empleador",
+            nullable = false,
+            foreignKey=@ForeignKey(name="FK_trabajo_empleador")
+    )
+    private Empleador idEmpleador;
+
+    @OneToMany(
+            mappedBy = "idTrabajo"
+    )
+    private Set<RequiereHabilidad> habilidades;
 
 
 }

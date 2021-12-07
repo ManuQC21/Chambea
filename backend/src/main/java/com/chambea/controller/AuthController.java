@@ -2,6 +2,7 @@ package com.chambea.controller;
 
 import com.chambea.dto.AuthRequest;
 import com.chambea.dto.CreateUserRequest;
+import com.chambea.dto.UsuarioDto;
 import com.chambea.model.Usuario;
 import com.chambea.repositories.UsuarioRepository;
 import com.chambea.security.UserDetailsImpl;
@@ -20,7 +21,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import javax.xml.bind.ValidationException;
 import java.util.Optional;
 
 @RestController
@@ -59,18 +59,22 @@ public class AuthController {
         return new ResponseEntity<Usuario>(usuarioNew, HttpStatus.CREATED);
     }
 
-    @GetMapping("/test")
-    public ResponseEntity<UserDetailsImpl> log(@RequestBody @Valid AuthRequest request){
+    @PostMapping("/test")
+    public ResponseEntity<UsuarioDto> log(@RequestBody @Valid AuthRequest request){
         try {
             Authentication authentication = authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword())
             );
 
             UserDetailsImpl usuario = (UserDetailsImpl) authentication.getPrincipal();
+            Usuario usuarioFromDb = this.usuarioRepository.getById(usuario.getId());
+
+            UsuarioDto usuarioDto = UsuarioDto.build(usuarioFromDb);
+
 
             return ResponseEntity.ok()
                     .header(HttpHeaders.AUTHORIZATION, jwtTokenUtil.createToken(usuario))
-                    .body(usuario);
+                    .body(usuarioDto);
         } catch (BadCredentialsException e){
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
@@ -85,6 +89,14 @@ public class AuthController {
            return ResponseEntity.ok()
                    .header(HttpHeaders.AUTHORIZATION, jwtTokenUtil.createToken(newUsuario))
                    .body(userDetails);
+
+   }
+
+   @GetMapping
+    public ResponseEntity probar(@RequestParam Integer usuario){
+        Usuario usuario1 = this.usuarioService.getUsuario(usuario).get();
+        usuario1.setNombres("Mira como persisto");
+        return new ResponseEntity(this.usuarioService.getUsuario(usuario), HttpStatus.OK);
 
    }
 

@@ -16,6 +16,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatExpansionModule } from '@angular/material/expansion';
 import {MatSortModule} from "@angular/material/sort";
+import {MatDividerModule} from "@angular/material/divider";
+import {MatListModule} from "@angular/material/list";
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
 
 
 
@@ -37,6 +40,9 @@ import {MatSortModule} from "@angular/material/sort";
     MatSnackBarModule,
     MatMenuModule,
     MatProgressSpinnerModule,
+    MatDividerModule,
+    MatListModule,
+    MatButtonToggleModule
   ],
   providers: [],
 })

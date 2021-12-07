@@ -8,9 +8,14 @@ import {Router} from "@angular/router";
 })
 export class LayoutComponent implements OnInit {
 
+  inRegister = true
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  test(){
   }
 
 }

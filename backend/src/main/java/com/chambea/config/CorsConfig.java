@@ -39,6 +39,10 @@ public class CorsConfig implements Filter {
         response.setHeader(
                 "Access-Control-Allow-Headers",
                 "x-requested-with, authorization, Content-Type, Authorization, credential, X-XSRF-TOKEN");
+        response.setHeader(
+                "Access-Control-Expose-Headers",
+                "authorization, Authorization"
+        );
 
         if ("OPTIONS".equalsIgnoreCase(request.getMethod())){
             response.setStatus(HttpServletResponse.SC_OK);

@@ -1,5 +1,6 @@
 package com.chambea.controller;
 
+import com.chambea.model.Empleador;
 import com.chambea.model.Trabajo;
 import com.chambea.services.TrabajoService;
 import org.springframework.http.HttpStatus;
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/trabajo")
+@RequestMapping("/trabajos")
 public class TrabajoController {
 
     private final TrabajoService trabajoService;
@@ -27,6 +28,13 @@ public class TrabajoController {
     @GetMapping
     public ResponseEntity<List<Trabajo>> getAll(){
         return new ResponseEntity<List<Trabajo>>(this.trabajoService.getAll(), HttpStatus.OK);
+    }
+
+    @GetMapping("/byEmployer")
+    public ResponseEntity<List<Trabajo>> getTrabajoByEmployer(@RequestParam Empleador empleador) {
+        List<Trabajo> trabajos = this.trabajoService.getByEmpleador(empleador);
+        ResponseEntity response = new ResponseEntity<List<Trabajo>>(trabajos, HttpStatus.OK );
+        return response;
     }
 
     @GetMapping("/{id}")

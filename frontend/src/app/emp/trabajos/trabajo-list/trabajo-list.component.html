@@ -1,0 +1,35 @@
+
+<div class="container">
+  <mat-card>
+    <mat-card-title class="p-3">
+      <span>Mis Trabajos</span>
+      <div class="pull-right">
+        <button mat-raised-button class="">Todos</button>
+      </div>
+    </mat-card-title>
+    <mat-divider style="border-top-width: 2px"></mat-divider>
+    <mat-card-content class="mt-4">
+
+      <div *ngFor="let trabajo of trabajos; index as i" fxLayout="row" class="mt-4">
+        <div fxFlex="40">
+          <h4>
+            {{trabajo.titulo}}
+          </h4>
+          <p>
+            {{trabajo.descripcion}}
+          </p>
+        </div>
+        <div>
+          <p>{{trabajo.idDuracion.descripcion}}</p>
+          <h2>{{i}}</h2>
+          <mat-divider *ngIf="i<trabajos.length-1"></mat-divider>
+        </div>
+      </div>
+
+    </mat-card-content>
+
+
+  </mat-card>
+
+
+</div>
