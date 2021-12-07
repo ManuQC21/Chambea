@@ -29,7 +29,16 @@ Nuestro backend está constituido por una base de datos, construida haciendo uso
 - **Spring MVC:** Un framework orientado a HTTP que sigue el patrón Modelo Vista Controlador, nos permite implementar métodos los cuales pueden ser accedidos mediante solicitudes HTTP.
 
 ### Frontend ![Angular](https://img.shields.io/badge/-angular-C71A36?style=flat-square&logo=angular) ![TypeScript](https://img.shields.io/badge/-typescript-white?style=flat-square&logo=typescript)
-- Nuestro Frontend es una aplicación web de una sola página; desarrollada haciendo uso del framework **Angular**, escrito en TypeScript.
+Nuestro Frontend es una aplicación web de una sola página; desarrollada haciendo uso del framework **Angular**, escrito en TypeScript; tambien empleamos algunas librerias, como las mencionadas a continuación:
+
+
+- [Font Awesome](https://fontawesome.com/v5.15/how-to-use/on-the-web/using-with/angular)
+
+- [Angular Material](https://material.angular.io/)
+
+- [Bootstrap](https://getbootstrap.com/)
+
+- [Angular Flex Layout](https://github.com/angular/flex-layout)
 
 
 #	:rocket:	Uso 
