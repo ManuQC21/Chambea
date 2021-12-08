@@ -8,6 +8,8 @@ import {MaterialModule} from "../material/material.module";
 import { TrabajoListComponent } from './trabajos/trabajo-list/trabajo-list.component';
 import { EditTrabajoComponent } from './trabajos/edit-trabajo/edit-trabajo.component';
 import { NewTrabajoComponent } from './trabajos/new-trabajo/new-trabajo.component';
+import { LayoutComponent } from './layout/layout.component';
+import {SharedModule} from "../shared/shared.module";
 
 
 @NgModule({
@@ -15,13 +17,15 @@ import { NewTrabajoComponent } from './trabajos/new-trabajo/new-trabajo.componen
     HomeComponent,
     TrabajoListComponent,
     EditTrabajoComponent,
-    NewTrabajoComponent
+    NewTrabajoComponent,
+    LayoutComponent
   ],
     imports: [
         CommonModule,
         EmpRoutingModule,
         FlexLayoutModule,
-        MaterialModule
+        MaterialModule,
+        SharedModule
     ]
 })
 export class EmpModule { }

@@ -7,6 +7,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -41,12 +42,19 @@ public class Freelancer {
     @OneToMany(
             mappedBy = "idFreelancer"
     )
-    private Set<Educacion> educacion;
+    private List<Educacion> educacion;
 
     @OneToMany(
             mappedBy = "idFreelancer"
     )
-    private Set<ExperienciaLaboral> experienciaLaboral;
+    private List<ExperienciaLaboral> experienciaLaboral;
+
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            mappedBy = "freelancer",
+            fetch = FetchType.LAZY
+    )
+    private List<TieneHabilidad> habilidades;
 
 
 

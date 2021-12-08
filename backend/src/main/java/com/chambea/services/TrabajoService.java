@@ -2,6 +2,7 @@ package com.chambea.services;
 
 import com.chambea.model.Empleador;
 import com.chambea.model.Trabajo;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 

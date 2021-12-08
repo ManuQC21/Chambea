@@ -1,17 +1,18 @@
 import {Habilidad} from "./habilidad.model";
+import {RequiereHabilidad} from "./requiere-habilidad.model";
 
 export interface Trabajo {
   idTrabajo: number,
   titulo: string,
   descripcion: string,
-  idDuracion: {
+  duracion: {
     idDuracion: number,
     descripcion: string
   },
-  idEmpleador: {
+  empleador: {
     idEmpleador: number,
     fechaRegistro?: string,
     compania?: string
   },
-  habilidades: Habilidad[]
+  habilidades: RequiereHabilidad[]
 }

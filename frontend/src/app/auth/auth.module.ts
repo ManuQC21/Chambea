@@ -10,6 +10,7 @@ import {MaterialModule} from "../material/material.module";
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
 import { SigninFormComponent } from './signin/signin-form/signin-form.component';
+import {SharedModule} from "../shared/shared.module";
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { SigninFormComponent } from './signin/signin-form/signin-form.component'
     AuthRoutingModule,
     MaterialModule,
     ReactiveFormsModule,
+    SharedModule,
   ]
 })
 export class AuthModule { }

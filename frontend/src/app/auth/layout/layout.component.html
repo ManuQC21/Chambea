@@ -1,6 +1,6 @@
 
 <header>
-  <mat-toolbar>
+  <mat-toolbar color="primary">
     <!--
     <span>Chambea.pe</span>
     -->
@@ -8,18 +8,17 @@
     <span class="spacer"></span>
 
 
-    <button *ngIf="inRegister" mat-raised-button (click)="inRegister=false" routerLink="/auth/login" color="primary">Iniciar Sesion</button>
-    <!--
-    <span style="margin: 0 10px"></span>
-    -->
-    <button *ngIf="!inRegister" mat-raised-button (click)="inRegister=true" routerLink="/auth/signin" color="primary">Registrarse</button>
+    <button *ngIf="inRegister" mat-raised-button (click)="inRegister=false" routerLink="/auth/login" color="accent">Iniciar Sesion</button>
+    <button *ngIf="!inRegister" mat-raised-button (click)="inRegister=true" routerLink="/auth/signin" color="accent">Registrarse</button>
   </mat-toolbar>
 </header>
 
 <body>
-  <div class="container p-5">
+  <div class="container p-5 mt-5 mb-5">
     <router-outlet></router-outlet>
   </div>
 </body>
+
+<app-footer></app-footer>
 
 

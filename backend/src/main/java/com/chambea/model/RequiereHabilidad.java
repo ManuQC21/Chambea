@@ -1,9 +1,17 @@
 package com.chambea.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
 @Entity
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
 @Table(name="requiere_habilidad")
 public class RequiereHabilidad {
@@ -21,6 +29,7 @@ public class RequiereHabilidad {
     )
     private Habilidad habilidad;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(
             name="id_trabajo",

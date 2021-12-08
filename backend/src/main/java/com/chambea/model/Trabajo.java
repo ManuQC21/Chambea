@@ -1,11 +1,18 @@
 package com.chambea.model;
 
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Entity
 @Data
 @Table(name="trabajo")
@@ -27,7 +34,7 @@ public class Trabajo {
             nullable = false,
             foreignKey = @ForeignKey(name="FK_trabajo_duracion")
     )
-    private Duracion idDuracion;
+    private Duracion duracion;
 
     @ManyToOne
     @JoinColumn(
@@ -35,12 +42,15 @@ public class Trabajo {
             nullable = false,
             foreignKey=@ForeignKey(name="FK_trabajo_empleador")
     )
-    private Empleador idEmpleador;
+    private Empleador empleador;
 
     @OneToMany(
-            mappedBy = "idTrabajo"
+            cascade = CascadeType.ALL,
+            mappedBy = "idTrabajo",
+            fetch = FetchType.LAZY
     )
-    private Set<RequiereHabilidad> habilidades;
+    //private Set<RequiereHabilidad> habilidades;
+    private List<RequiereHabilidad> habilidades;
 
 
 }

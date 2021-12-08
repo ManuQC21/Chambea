@@ -10,5 +10,5 @@ import java.util.List;
 @Repository
 public interface TrabajoRepository extends JpaRepository<Trabajo, Integer> {
 
-    List<Trabajo> getByIdEmpleador(Empleador empleador);
+    List<Trabajo> getByEmpleador(Empleador empleador);
 }

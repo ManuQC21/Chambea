@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {MatMenu} from "@angular/material/menu";
-import {UsuarioDto} from "../../model/usuarioDto";
 
 @Component({
   selector: 'app-layout',
@@ -9,15 +7,9 @@ import {UsuarioDto} from "../../model/usuarioDto";
 })
 export class LayoutComponent implements OnInit {
 
-  currentUser : UsuarioDto
-
-  constructor() {
-    this.currentUser = JSON.parse(<string>localStorage.getItem("user"));
-
-  }
+  constructor() { }
 
   ngOnInit(): void {
-    MatMenu
   }
 
 }
