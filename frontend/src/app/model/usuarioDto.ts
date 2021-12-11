@@ -5,4 +5,5 @@ export interface UsuarioDto{
   apellidos: string;
   email: string;
   esFreelancer: boolean;
+  idFreelancer?: number;
 }
