@@ -24,7 +24,7 @@ export class AuthService {
 
   log(creds: UserLoginModel): Observable<any>{
     return this.http.post<any>(
-      `${this.apiBase}/test`,
+      `${this.apiBase}/login`,
       creds,
       {observe : "response"}
     )
@@ -33,7 +33,7 @@ export class AuthService {
 
   signIn(usuario: CreateUserRequest): Observable<any>{
     return this.http.post<any>(
-      `${this.apiBase}/otroTest`,
+      `${this.apiBase}/signup`,
       usuario,
       {observe : "response"}
     )

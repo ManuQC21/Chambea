@@ -43,7 +43,7 @@ public class AuthController {
     }*/
 
 
-    @PostMapping("/test")
+    @PostMapping("/login")
     public ResponseEntity<UsuarioDto> log(@RequestBody @Valid AuthRequest request){
         try {
             Authentication authentication = authenticationManager.authenticate(
@@ -65,7 +65,7 @@ public class AuthController {
     }
 
 
-   @PostMapping("/otroTest")
+   @PostMapping("/signup")
    public ResponseEntity crear(@RequestBody CreateUserRequest usuario) {
 
            Usuario newUsuario = authService.createUsuario(usuario);
