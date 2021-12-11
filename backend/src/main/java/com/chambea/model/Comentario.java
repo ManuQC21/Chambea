@@ -1,11 +1,9 @@
 package com.chambea.model;
 
 import lombok.Data;
-import org.hibernate.annotations.CreationTimestamp;
 import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
-import java.util.Date;
 
 @Data
 @Entity
@@ -13,32 +11,11 @@ import java.util.Date;
 public class Comentario {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "comment_seq_gen")
-    @Column(name = "id")
-    private Integer idUsuario;
+    @Size(min=4, message = "El comentario debe tener mínimo 24 caracteres")
+    @Column(name="comentario", nullable = false, length = 256)
 
-    @Column(columnDefinition = "TEXT", nullable = false)
-    @NotEmpty(message = "¡El cuerpo del comentario no puede estar vacío! Escribe algo cuerdo por amor a Internet, ¿quieres?")
-    private String body;
-
-    @Column(name = "creation_date", nullable = false, updatable = false)
-    private Date creationDate;
-
-    @Column(name="Comentario", nullable = false, length = 256)
     private String comentario;
 
-    public String getComentario() {
-        return comentario;
-    }
-
-    @Override
-    public String toString() {
-        return "Comment{" +
-                "id=" + idUsuario +
-                ", body='" + body + '\'' +
-                ", creationDate=" + creationDate    +
-                '}';
-    }
 
 
 }

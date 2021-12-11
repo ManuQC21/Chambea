@@ -3,11 +3,11 @@ package com.chambea.services;
 
 import com.chambea.model.Comentario;
 
-import java.util.List;
+import java.util.*;
 
 public interface ComentarioService {
 
-    Comentario save(Comentario comment);
+    Comentario crearCalificacionyComentario(Comentario comment);
     void delete(Comentario comment);
     List<Comentario> getComentario();
 }

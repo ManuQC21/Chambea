@@ -20,6 +20,14 @@ public class ComentarioServiceImpl implements ComentarioService {
     }
 
     @Override
+    public Comentario crearCalificacionyComentario(Comentario comment) {
+        return commentRepository.save(comment);
+    }
+
+    public List<Comentario> getAll() {
+        return this.commentRepository.findAll();
+    }
+
     public Comentario save(Comentario comment) {
         return commentRepository.saveAndFlush(comment);
     }
@@ -30,7 +38,6 @@ public class ComentarioServiceImpl implements ComentarioService {
     }
 
 
-    @Override
     public List<Comentario> getComentario() {
         return this.commentRepository.findAll();
     }
