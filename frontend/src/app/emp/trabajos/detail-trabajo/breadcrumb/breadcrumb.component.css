@@ -1,0 +1,27 @@
+
+
+.breadcrumb > div {
+  padding: 10px 0;
+  border-radius: 10px;
+  /*background-color: #fe4f0f;
+  color: white;*/
+}
+
+
+
+.active{
+  background-color: #fe4f0f;
+  color: white;
+}
+
+.inactive{
+  background-color: white;
+  color: black;
+}
+
+.inactive:hover{
+  background-color: white;
+  color: #fe4f0f;
+  box-shadow: 0 0 0 3px #fe4f0f;
+}
+

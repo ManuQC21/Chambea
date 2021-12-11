@@ -27,4 +27,10 @@ export class TrabajoService {
       `${this.apiBase}`
     )
   }
+
+  getById(id: number) : Observable<Trabajo>{
+    return this.http.get<Trabajo>(
+      `${this.apiBase}/${id}`
+    )
+  }
 }

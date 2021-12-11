@@ -12,7 +12,7 @@
 
     <button mat-button [mat-menu-trigger-for]="menuT">Trabajos</button>
     <mat-menu #menuT="matMenu">
-      <button mat-menu-item>Mis Trabajos</button>
+      <button [routerLink]="['./home']" mat-menu-item>Mis Trabajos</button>
       <button mat-menu-item>Publicar un trabajo</button>
     </mat-menu>
 

@@ -6,8 +6,8 @@
 }
 
 
-@media (min-width: 1200px) {
+@media (min-width: 500px) {
   .container {
-    width: 980px;
+    width: 900px;
   }
 }

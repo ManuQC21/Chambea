@@ -1,0 +1,52 @@
+<mat-card *ngIf="trabajo" class="" fxLayout="row">
+  <div fxFlex="70">
+    <mat-card-header class="pt-4">
+      <h3>Detalles del Trabajo</h3>
+    </mat-card-header>
+
+    <hr style="width: 92%; margin: auto">
+
+    <section class="" style="padding: 0 16px; margin: 10px 16px 16px 16px">
+      <p>{{trabajo.descripcion}}</p>
+      <p class="text-secondary">Publicado en {{trabajo.fecha}}</p>
+    </section>
+
+    <hr style="width: 92%; margin: auto">
+
+    <section class="" style="padding: 0 16px; margin: 20px 16px 16px 16px">
+      <h4>Habilidades</h4>
+      <mat-chip-list class="mat-chip-list-stacked text-secondary" fxLayout="row">
+        <mat-chip *ngFor="let habilidad of trabajo.habilidades">
+          {{ habilidad.habilidad.descripcion}}
+        </mat-chip>
+      </mat-chip-list>
+    </section>
+
+    <hr style="width: 92%; margin: auto">
+
+    <section class="" style="padding: 0 16px; margin: 20px 16px 16px 16px">
+      <h4>Actividad</h4>
+      <section class="text-secondary">
+        <p>Propuestas: {{trabajo.postulaciones.length}}</p>
+        <p>Mensajes: {{0}}</p>
+      </section>
+    </section>
+
+  </div>
+
+  <mat-divider vertical style="border-right-width: 2px"></mat-divider>
+  <div style="background-color: #f1f2f4" fxFlex="">
+
+    <mat-nav-list>
+      <a mat-list-item routerLink="../edit" ><fa-icon [icon]="['far', 'edit']" transform="grow-3"></fa-icon> Editar </a>
+      <a mat-list-item  ><fa-icon [icon]="['fas', 'slash']" transform="grow-3"></fa-icon> Eliminar </a>
+      <a mat-list-item  ><fa-icon [icon]="['fas', 'thumbtack']" transform="grow-3"></fa-icon>Reusar </a>
+    </mat-nav-list>
+  </div>
+
+
+</mat-card>
+
+<div *ngIf="!trabajo">
+  asd
+</div>

@@ -1,15 +1,15 @@
 
 <div class="container">
   <div fxLayout="row" fxLayoutAlign="center center" class="mt-5 mb-5">
-    <div fxFlex fxLayoutAlign="center center">
-      <h1>{{currentUser.nombres}} {{this.currentUser.apellidos}}</h1>
+    <div fxFlex fxLayoutAlign="">
+      <h1 style="margin: 0;">{{currentUser.nombres}} {{this.currentUser.apellidos}}</h1>
     </div>
 
-    <div fxFlex="20">
-      <button mat-stroked-button color="primary" > Publica un Trabajo</button>
+    <div fxFlex="15">
+      <button mat-stroked-button color="primary" > Freelancers</button>
     </div>
     <div fxFlex="20">
-      <button mat-raised-button color="primary" > Publica un Trabajo</button>
+      <button mat-raised-button color="primary"  [routerLink]="['../trabajo/new'] "> Publica un Trabajo</button>
     </div>
   </div>
 

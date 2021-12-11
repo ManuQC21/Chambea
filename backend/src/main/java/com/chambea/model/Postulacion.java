@@ -1,9 +1,12 @@
 package com.chambea.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jdk.jfr.Timespan;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Calendar;
 
 @Entity
@@ -15,8 +18,9 @@ public class Postulacion {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idPostulacion;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Calendar fecha;
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    @Column(name = "fecha", nullable = false)
+    private LocalDate fecha;
 
     @ManyToOne
     @JoinColumn(
@@ -26,6 +30,7 @@ public class Postulacion {
     )
     private Freelancer freelancer;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(
             name="id_trabajo",

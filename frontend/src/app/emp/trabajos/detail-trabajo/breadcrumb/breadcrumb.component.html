@@ -1,0 +1,21 @@
+
+
+
+<div class="breadcrumb" fxLayout="row" fxLayoutGap="40px">
+
+  <div fxFlex=""
+       fxLayoutAlign="center center"
+       [routerLink]="['./detail']"
+       [ngClass]="{'active' : ubicacion.toString() == 'detail', 'inactive' : ubicacion.toString() == 'propuestas'}"
+  >
+    <span>Detalles del trabajo</span>
+  </div>
+  <div fxFlex=""
+       fxLayoutAlign="center center"
+       [routerLink]="['./propuestas']"
+       [ngClass]="{'active' : ubicacion.toString() == 'propuestas', 'inactive' : ubicacion.toString() != 'propuestas'}"
+  >
+    <span>Propuestas</span>
+  </div>
+
+</div>

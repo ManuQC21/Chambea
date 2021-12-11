@@ -9,6 +9,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 @Slf4j
@@ -25,6 +27,7 @@ public class TrabajoServiceImpl implements TrabajoService {
     @Override
     public Trabajo createTrabajo(Trabajo trabajo) {
         log.error(trabajo.getHabilidades().toString());
+        trabajo.setFecha(LocalDate.now());
 
         for (RequiereHabilidad habilidad : trabajo.getHabilidades()){
             habilidad.setIdTrabajo(trabajo);
@@ -40,7 +43,7 @@ public class TrabajoServiceImpl implements TrabajoService {
 
     @Override
     public Trabajo getTrabajo(Integer id) {
-        return trabajoRepository.getById(id);
+        return trabajoRepository.findById(id).get();
     }
 
     @Override

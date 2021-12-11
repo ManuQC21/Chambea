@@ -1,0 +1,26 @@
+<mat-divider></mat-divider>
+
+<div [routerLink]="['../trabajo/',trabajo.idTrabajo,'detail']" *ngIf="trabajo"  class="pt-4 p-4 pb-3 trabajo-container">
+
+  <div fxLayout="row">
+
+  <div fxFlex="35" fxLayout="column">
+    <h2>
+      {{trabajo.titulo}}
+    </h2>
+    <p class="text-secondary">
+      Creado en: {{trabajo.fecha}}
+    </p>
+  </div>
+
+    <div fxFlex="40" fxLayout="column">
+      <span class="pb-4"></span>
+      <p>
+        {{trabajo.descripcion}}
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<mat-divider></mat-divider>

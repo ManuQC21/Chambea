@@ -1,40 +1,21 @@
 
 <div class="container">
   <mat-card>
+
     <mat-card-title class="p-3">
-      <span>Mis Trabajos</span>
+      <span class="fw-bold">Mis Trabajos</span>
       <div class="pull-right">
-        <button mat-raised-button class="">Todos</button>
+        <h3 style="color: #f45100">Ver todos</h3>
       </div>
     </mat-card-title>
-    <mat-divider style="border-top-width: 2px"></mat-divider>
-    <mat-card-content class="mt-4">
 
+    <mat-divider style="border-top-width: 3px"></mat-divider>
+
+    <mat-card-content>
       <div class="outer-container" *ngFor="let trabajo of trabajos; index as i">
-        <div  fxLayout="row" class="mt-4">
-          <div fxFlex="40">
-            <h4>
-              {{trabajo.titulo}}
-            </h4>
-            <p>
-              {{trabajo.descripcion}}
-            </p>
-            <p *ngFor="let habilidad of trabajo.habilidades">
-              {{ habilidad.habilidad.descripcion}}
-            </p>
-          </div>
-          <div>
-            <p>{{trabajo.duracion.descripcion}}</p>
-            <h2>{{i}}</h2>
-          </div>
-        </div>
-        <mat-divider *ngIf="trabajos.length-1"></mat-divider>
+        <app-trabajo [trabajo]="trabajo"></app-trabajo>
       </div>
-
-
     </mat-card-content>
-
-
   </mat-card>
 
 

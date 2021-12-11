@@ -40,7 +40,7 @@ public class TrabajoController {
     @GetMapping("/{id}")
     public ResponseEntity<Trabajo> get(@PathVariable("id") Integer id){
         Trabajo trabajo = this.trabajoService.getTrabajo(id);
-        return new ResponseEntity<Trabajo>(trabajo, HttpStatus.CREATED);
+        return new ResponseEntity<Trabajo>(trabajo, HttpStatus.OK);
     }
 
     @PutMapping

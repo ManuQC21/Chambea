@@ -1,0 +1,23 @@
+
+mat-card{
+  padding-bottom: 0;
+  padding-top: 0;
+  padding: 0;
+}
+
+mat-list > mat-list-item {
+  padding: 0;
+  color: orangered;
+}
+
+fa-icon{
+  margin-right: 12px;
+}
+
+mat-nav-list{
+  padding: 0;
+}
+
+mat-nav-list > a {
+  color: orangered;
+}

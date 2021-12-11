@@ -7,6 +7,7 @@ import {MaterialModule} from "../material/material.module";
 import {HeaderComponent} from "./header/header.component";
 import {FooterComponent} from "./footer/footer.component";
 import {IconsModule} from "../icons/icons.module";
+import {RouterModule} from "@angular/router";
 
 
 @NgModule({
@@ -14,12 +15,13 @@ import {IconsModule} from "../icons/icons.module";
     HeaderComponent,
     FooterComponent
   ],
-  imports: [
-    CommonModule,
-    FlexLayoutModule,
-    MaterialModule,
-    IconsModule
-  ],
+    imports: [
+        CommonModule,
+        FlexLayoutModule,
+        MaterialModule,
+        IconsModule,
+        RouterModule
+    ],
   exports: [
     HeaderComponent,
     FooterComponent
