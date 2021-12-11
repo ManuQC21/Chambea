@@ -1,8 +1,10 @@
 package com.chambea.services.impl;
 
+import com.chambea.model.Duracion;
 import com.chambea.model.Empleador;
 import com.chambea.model.RequiereHabilidad;
 import com.chambea.model.Trabajo;
+import com.chambea.repositories.DuracionRepository;
 import com.chambea.repositories.TrabajoRepository;
 import com.chambea.services.TrabajoService;
 import lombok.extern.slf4j.Slf4j;
@@ -18,9 +20,12 @@ import java.util.List;
 public class TrabajoServiceImpl implements TrabajoService {
 
     TrabajoRepository trabajoRepository;
+    DuracionRepository duracionRepository;
 
-    TrabajoServiceImpl(TrabajoRepository trabajoRepository) {
+    TrabajoServiceImpl(TrabajoRepository trabajoRepository, DuracionRepository duracionRepository) {
+
         this.trabajoRepository = trabajoRepository;
+        this.duracionRepository = duracionRepository;
     }
 
     @Transactional
@@ -54,6 +59,11 @@ public class TrabajoServiceImpl implements TrabajoService {
     @Override
     public List<Trabajo> getByEmpleador(Empleador empleador) {
         return this.trabajoRepository.getByEmpleador(empleador);
+    }
+
+    @Override
+    public List<Duracion> getDuraciones() {
+        return this.duracionRepository.findAll();
     }
 
     @Override

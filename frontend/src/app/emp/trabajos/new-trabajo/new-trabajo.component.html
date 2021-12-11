@@ -1,5 +1,21 @@
 
 <div class="container mt-5 mb-5" >
 
+  <mat-card>
+
+    <mat-card-title class="p-3">
+      <div>
+        <h3 style="color: #f45100">Publica una Oferta Laboral</h3>
+      </div>
+    </mat-card-title>
+
+    <mat-divider style="border-top-width: 3px"></mat-divider>
+
+    <mat-card-content class="mt-5 mb-3">
+      <app-trabajo-form (onSubmit)="createTrabajo($event)"></app-trabajo-form>
+    </mat-card-content>
+  </mat-card>
+
+
 
 </div>

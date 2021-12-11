@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {TrabajoService} from "../shared/trabajo.service";
+import {Trabajo} from "../../../model/trabajo.model";
 
 @Component({
   selector: 'app-new-trabajo',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewTrabajoComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private trabajoService: TrabajoService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  createTrabajo(trabajo:Trabajo){
+    this.trabajoService.createTrabajo(trabajo).subscribe(
+      response => console.log(response)
+    )
   }
 
 }

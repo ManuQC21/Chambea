@@ -1,5 +1,6 @@
 package com.chambea.services;
 
+import com.chambea.model.Duracion;
 import com.chambea.model.Empleador;
 import com.chambea.model.Trabajo;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,5 +16,7 @@ public interface TrabajoService {
     void deleteTrabajo(Integer id);
 
     List<Trabajo> getByEmpleador(Empleador empleador);
+
+    List<Duracion> getDuraciones();
 
 }

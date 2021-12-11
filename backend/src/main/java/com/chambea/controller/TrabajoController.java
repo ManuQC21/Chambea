@@ -1,5 +1,6 @@
 package com.chambea.controller;
 
+import com.chambea.model.Duracion;
 import com.chambea.model.Empleador;
 import com.chambea.model.Trabajo;
 import com.chambea.services.TrabajoService;
@@ -53,5 +54,11 @@ public class TrabajoController {
     public ResponseEntity<Void> deleteTrabajo(@PathVariable("id") Integer id){
         this.trabajoService.deleteTrabajo(id);
         return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
+    }
+
+    @GetMapping("/duraciones")
+    public ResponseEntity<List<Duracion>> getDuraciones(){
+        List<Duracion> duraciones = this.trabajoService.getDuraciones();
+        return new ResponseEntity<>(duraciones, HttpStatus.OK);
     }
 }
