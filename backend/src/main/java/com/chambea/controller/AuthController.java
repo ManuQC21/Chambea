@@ -1,6 +1,7 @@
 package com.chambea.controller;
 
 import com.chambea.dto.AuthRequest;
+import com.chambea.dto.CreateFreelancerRequest;
 import com.chambea.dto.CreateUserRequest;
 import com.chambea.dto.UsuarioDto;
 import com.chambea.model.Usuario;
@@ -41,23 +42,6 @@ public class AuthController {
         this.authenticationManager = authenticationManager;
     }*/
 
-    @GetMapping("/login")
-    public ResponseEntity<String> login(
-            @RequestParam String usuario,
-            @RequestParam String password){
-
-        Optional<Usuario> usuarioLogeado = usuarioService.getUserByUsernameAndPassword(usuario, password);
-        if (usuarioLogeado.isPresent()){
-            return new ResponseEntity<String>("Credenciales validas", HttpStatus.OK);
-        }
-        return new ResponseEntity<>("Credenciales invalidas", HttpStatus.BAD_GATEWAY);
-    }
-
-    @PostMapping("/signin")
-    public ResponseEntity<Usuario> createUsuario(@Valid @RequestBody Usuario usuario){
-        Usuario usuarioNew = this.usuarioService.createUsuario(usuario);
-        return new ResponseEntity<Usuario>(usuarioNew, HttpStatus.CREATED);
-    }
 
     @PostMapping("/test")
     public ResponseEntity<UsuarioDto> log(@RequestBody @Valid AuthRequest request){
@@ -95,11 +79,12 @@ public class AuthController {
 
    }
 
-   @GetMapping
-    public ResponseEntity probar(@RequestParam Integer usuario){
-        Usuario usuario1 = this.usuarioService.getUsuario(usuario).get();
-        usuario1.setNombres("Mira como persisto");
-        return new ResponseEntity(this.usuarioService.getUsuario(usuario), HttpStatus.OK);
+
+
+   @PostMapping("/registroFreelancer")
+    public ResponseEntity probar(@RequestBody CreateFreelancerRequest request){
+        Usuario usuario1 = this.authService.registroFreelancer(request);
+        return new ResponseEntity(usuario1, HttpStatus.CREATED);
 
    }
 

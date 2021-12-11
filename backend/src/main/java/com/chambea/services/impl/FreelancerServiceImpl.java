@@ -2,22 +2,25 @@ package com.chambea.services.impl;
 
 import com.chambea.model.Freelancer;
 import com.chambea.repositories.FreelancerRepository;
+import com.chambea.repositories.UsuarioRepository;
 import com.chambea.services.FreelancerService;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@AllArgsConstructor
 @Service
 public class FreelancerServiceImpl implements FreelancerService {
 
     FreelancerRepository freelancerRepository;
+    UsuarioRepository usuarioRepository;
 
-    FreelancerServiceImpl(FreelancerRepository freelancerRepository){
-        this.freelancerRepository = freelancerRepository;
-    }
+
 
     @Override
     public Freelancer createFreelancer(Freelancer freelancer) {
+
         return freelancerRepository.save(freelancer);
     }
 

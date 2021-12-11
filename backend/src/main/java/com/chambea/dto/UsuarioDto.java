@@ -12,6 +12,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class UsuarioDto {
     private Integer id;
+    private Integer idFreelancer;
     private String username;
     private String nombres;
     private String apellidos;
@@ -26,10 +27,12 @@ public class UsuarioDto {
         usuarioDto.setNombres(usuario.getNombres());
         usuarioDto.setApellidos(usuario.getApellidos());
         usuarioDto.setEmail(usuario.getEmail());
-        if(usuario.getFreelancer()!=null){
-            usuarioDto.setEsFreelancer(true);
+        if(usuario.getFreelancer()==null){
+            usuarioDto.setEsFreelancer(false);
+            return usuarioDto;
         }
-        usuarioDto.setEsFreelancer(false);
+        usuarioDto.setEsFreelancer(true);
+        usuarioDto.setIdFreelancer(usuario.getFreelancer().getIdFreelancer());
 
         return usuarioDto;
 
