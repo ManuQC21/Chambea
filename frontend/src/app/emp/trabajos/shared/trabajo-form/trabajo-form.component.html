@@ -1,4 +1,81 @@
 
-<div class="row">
+  <div>
+      <form
+        (ngSubmit)="save()"
+        autocomplete="off"
+        [formGroup]="form"
+        #frmLibro="ngForm"
+        fxLayout="column"
+      >
 
-</div>
+        <mat-form-field appearance="outline" class="d-block">
+          <mat-label>
+            Titulo
+          </mat-label>
+          <input
+            matInput
+            type="text"
+            placeholder="Titulo"
+            formControlName="titulo"
+          >
+
+          <mat-error *ngIf="form.controls.titulo.hasError('required')">
+            Este campo es obligatorio
+          </mat-error>
+
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="d-block" >
+          <mat-label>
+            Descripcion
+          </mat-label>
+          <textarea matInput formControlName="descripcion" rows="5"></textarea>
+
+          <mat-error *ngIf="form.controls.descripcion.hasError('required')">
+            Este campo es obligatorio
+          </mat-error>
+
+        </mat-form-field>
+
+        <mat-form-field   fxFlexAlign="start">
+          <mat-label>
+            Duracion estimada
+          </mat-label>
+          <mat-select  formControlName="duracion">
+            <mat-option *ngFor="let duracion of duraciones" [value]="duracion">
+              {{ duracion.descripcion }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field fxFlexAlign="start">
+          <mat-label>
+            Habilidades
+          </mat-label>
+          <mat-select multiple  formControlName="habilidades" >
+            <!-- !!!!! :value {habilidad:habilidad} To match trabajo JSON format -->
+            <mat-option *ngFor="let habilidad of habilidades" [value]="{habilidad : habilidad}">
+              {{ habilidad.descripcion }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+
+        <div fxLayoutAlign="row" fxLayoutAlign="center" fxLayoutGap="10px">
+          <button mat-button fxFlex="40">Cancelar</button>
+
+          <button
+            fxFlex="40"
+            mat-raised-button
+            color="primary"
+            type="submit"
+            class="ms-2"
+            [disabled]="frmLibro.invalid"
+          >
+            Guardar
+          </button>
+        </div>
+      </form>
+  </div>
+
+
