@@ -15,9 +15,9 @@
           matInput
           type="text"
           placeholder="Usuario"
-          formControlName="nombreUsuario"
+          formControlName="username"
         >
-        <mat-error *ngIf="form.controls.nombreUsuario.hasError('required')">
+        <mat-error *ngIf="form.controls.username.hasError('required')">
           Este campo es obligatorio
         </mat-error>
       </mat-form-field>
@@ -78,6 +78,21 @@
           formControlName="password"
         >
         <mat-error *ngIf="form.controls.password.hasError('required')">
+          Este campo es obligatorio
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="d-block">
+        <mat-label>
+          Confirme su contraseña
+        </mat-label>
+        <input
+          matInput
+          type="password"
+          placeholder="Password"
+          formControlName="rePassword"
+        >
+        <mat-error *ngIf="form.controls.rePassword.hasError('required')">
           Este campo es obligatorio
         </mat-error>
       </mat-form-field>

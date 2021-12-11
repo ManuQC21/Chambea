@@ -5,6 +5,7 @@ import {Observable} from "rxjs";
 import {Usuario} from "./usuario.model";
 import {UserLoginModel} from "./user-login.model";
 import {UsuarioDto} from "../../model/usuarioDto";
+import {CreateUserRequest} from "./user-creation.model";
 
 @Injectable({
   providedIn: 'root'
@@ -46,10 +47,11 @@ export class AuthService {
     )
   }
 
-  signIn(usuario: Usuario) {
-    return this.http.post<Usuario>(
-      `${this.apiBase}/signin`,
-      usuario
+  signIn(usuario: CreateUserRequest): Observable<any>{
+    return this.http.post<any>(
+      `${this.apiBase}/otroTest`,
+      usuario,
+      {observe : "response"}
     )
   }
 

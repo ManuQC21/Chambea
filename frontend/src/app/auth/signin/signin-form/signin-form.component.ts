@@ -2,6 +2,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../../shared/auth.service";
 import {Usuario} from "../../shared/usuario.model";
+import {CreateUserRequest} from "../../shared/user-creation.model";
 
 @Component({
   selector: 'app-signin-form',
@@ -10,12 +11,13 @@ import {Usuario} from "../../shared/usuario.model";
 })
 export class SigninFormComponent implements OnInit {
 
-  @Output() onSubmit : EventEmitter<Usuario> = new EventEmitter<Usuario>()
+  @Output() onSubmit : EventEmitter<CreateUserRequest> = new EventEmitter<CreateUserRequest>()
 
-  usuario : Usuario = {
+  userCreate : CreateUserRequest = {
     email: '',
     password: '',
-    nombreUsuario: '',
+    rePassword: '',
+    username: '',
     nombres: '',
     apellidos: ''
   }
@@ -23,27 +25,32 @@ export class SigninFormComponent implements OnInit {
   form : FormGroup = this.formBuilder.group(
     {
       email: [
-        this.usuario.email, [
+        this.userCreate.email, [
           Validators.required
         ]
       ],
-      nombreUsuario: [
-        this.usuario.nombreUsuario, [
+      username: [
+        this.userCreate.username, [
           Validators.required
         ]
       ],
       nombres: [
-        this.usuario.nombres, [
+        this.userCreate.nombres, [
           Validators.required
         ]
       ],
       apellidos: [
-        this.usuario.apellidos, [
+        this.userCreate.apellidos, [
           Validators.required
         ]
       ],
       password: [
-        this.usuario.password, [
+        this.userCreate.password, [
+          Validators.required
+        ]
+      ],
+      rePassword: [
+        this.userCreate.rePassword, [
           Validators.required
         ]
       ]
@@ -59,6 +66,7 @@ export class SigninFormComponent implements OnInit {
 
   signin(){
     this.onSubmit.emit(this.form.value)
+    console.log(this.form.value)
   }
 
 }

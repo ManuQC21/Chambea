@@ -86,9 +86,12 @@ public class AuthController {
 
            Usuario newUsuario = authService.createUsuario(usuario);
            UserDetailsImpl userDetails = UserDetailsImpl.build(newUsuario);
+
+           UsuarioDto usuarioDto = UsuarioDto.build(newUsuario);
+
            return ResponseEntity.ok()
                    .header(HttpHeaders.AUTHORIZATION, jwtTokenUtil.createToken(newUsuario))
-                   .body(userDetails);
+                   .body(usuarioDto);
 
    }
 
