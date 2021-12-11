@@ -9,6 +9,7 @@
     <section class="" style="padding: 0 16px; margin: 10px 16px 16px 16px">
       <p>{{trabajo.descripcion}}</p>
       <p class="text-secondary">Publicado en {{trabajo.fecha}}</p>
+      <p class="text-secondary">Duracion estimada: {{trabajo.duracion.descripcion}}</p>
     </section>
 
     <hr style="width: 92%; margin: auto">
@@ -37,9 +38,9 @@
   <mat-divider vertical style="border-right-width: 2px"></mat-divider>
   <div style="background-color: #f1f2f4" fxFlex="">
 
-    <mat-nav-list>
+    <mat-nav-list *ngIf="trabajo.idTrabajo">
       <a mat-list-item routerLink="../edit" ><fa-icon [icon]="['far', 'edit']" transform="grow-3"></fa-icon> Editar </a>
-      <a mat-list-item  ><fa-icon [icon]="['fas', 'slash']" transform="grow-3"></fa-icon> Eliminar </a>
+      <a mat-list-item (click)="delete(trabajo.idTrabajo)" ><fa-icon [icon]="['fas', 'slash']" transform="grow-3"></fa-icon> Eliminar </a>
       <a mat-list-item  ><fa-icon [icon]="['fas', 'thumbtack']" transform="grow-3"></fa-icon>Reusar </a>
     </mat-nav-list>
   </div>

@@ -1,5 +1,6 @@
 package com.chambea.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -15,6 +16,7 @@ public class Empleador {
     @Column(name="id_empleador")
     private Integer idEmpleador;
 
+    @JsonIgnore
     @OneToOne
     @JoinColumn(
             name = "id_usuario",

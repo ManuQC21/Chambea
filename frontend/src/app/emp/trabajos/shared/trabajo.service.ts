@@ -46,6 +46,19 @@ export class TrabajoService {
     )
   }
 
+  update(trabajo: Trabajo): Observable<Trabajo>{
+    return this.http.put<Trabajo>(
+      `${this.apiBase}`,
+      trabajo
+    )
+  }
+
+  delete(id: number) {
+    return this.http.delete(
+      `${this.apiBase}/${id}`
+    )
+  }
+
   getDuraciones(): Observable<Duracion[]>{
     return this.http.get<Duracion[]>(
       `${this.apiBase}/duraciones`

@@ -32,6 +32,7 @@ export class SigninComponent implements OnInit {
 
           console.log(res)
           this.saveUserData(res.body, res.headers.get("Authorization"));
+          localStorage.setItem("rol", 'empleador')
 
           let user = localStorage.getItem("user")
           let token = localStorage.getItem("token")

@@ -34,7 +34,8 @@ public class RequiereHabilidad {
     @JoinColumn(
             name="id_trabajo",
             nullable = false,
-            foreignKey = @ForeignKey(name="FK_requiere_trabajo")
+            foreignKey = @ForeignKey(name="FK_requiere_trabajo"),
+            updatable = true
     )
     private Trabajo idTrabajo;
 }

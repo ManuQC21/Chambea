@@ -30,22 +30,6 @@ export class AuthService {
     )
   }
 
-  logIn(username: string, password: string){
-
-    let params = new HttpParams();
-    params = params.append('usuario', username);
-    params = params.append('password', password)
-
-    console.log(params);
-
-    return this.http.get(
-      `${this.apiBase}/login`,
-      {
-        params: params
-      }
-
-    )
-  }
 
   signIn(usuario: CreateUserRequest): Observable<any>{
     return this.http.post<any>(

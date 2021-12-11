@@ -1,14 +1,14 @@
 package com.chambea.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.Calendar;
+import java.time.LocalDate;
 import java.util.List;
-import java.util.Set;
 
 @Data
 @Entity
@@ -20,9 +20,9 @@ public class Freelancer {
     @Column(name="id_freelancer")
     private Integer idFreelancer;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name="fecha_registro", nullable = false)
-    private Calendar fechaRegistro;
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    @Column(name = "fecha_registro", nullable = false)
+    private LocalDate fechaRegistro;
 
     @Column(name="titulo", nullable=false, length=64)
     private String titulo;
@@ -30,6 +30,7 @@ public class Freelancer {
     @Column(name="descripcion", nullable=false, length=64)
     private String descripcion;
 
+    @JsonIgnore
     @OneToOne(
             //fetch = FetchType.LAZY
     )
@@ -45,7 +46,9 @@ public class Freelancer {
     private List<Educacion> educacion;
 
     @OneToMany(
-            mappedBy = "idFreelancer"
+            mappedBy = "idFreelancer",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
     )
     private List<ExperienciaLaboral> experienciaLaboral;
 
