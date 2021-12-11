@@ -1,0 +1,13 @@
+
+.mat-raised-button,
+.mat-stroked-button
+{
+  border-radius: 15px;
+}
+
+
+@media (min-width: 500px) {
+  .container {
+    width: 900px;
+  }
+}

@@ -35,11 +35,9 @@ public class Usuario {
     @Column(name="apellidos", nullable=false, length=64)
     private String apellidos;
 
-    @JsonIgnore
     @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL)
     private Freelancer freelancer;
 
-    @JsonIgnore
     @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL)
     private Empleador empleador;
 

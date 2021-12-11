@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AuthService} from "../shared/auth.service";
 import {UsuarioDto} from "../../model/usuarioDto";
 import {HttpResponse} from "@angular/common/http";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -10,20 +11,14 @@ import {HttpResponse} from "@angular/common/http";
 })
 export class LoginComponent implements OnInit {
 
-  constructor(public authService: AuthService) { }
+  constructor(
+    public authService: AuthService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
 
-  login(creds: any){
-    console.log(creds)
-    this.authService.logIn(creds.usuario, creds.password)
-      .subscribe(
-        (response) => {
-          console.log(response)
-        }
-      )
-  }
 
   log(creds: any){
     console.log(creds)
@@ -32,6 +27,7 @@ export class LoginComponent implements OnInit {
         (res) => {
 
           this.saveUserData(res.body, res.headers.get("Authorization"));
+          localStorage.setItem("rol", 'empleador')
 
           let user = localStorage.getItem("user")
           let token = localStorage.getItem("token")
@@ -40,6 +36,8 @@ export class LoginComponent implements OnInit {
             console.log(JSON.parse(user))
           }
           console.log(localStorage.getItem("token"))
+
+          this.router.navigate(['emp/home'])
         }
       )
   }

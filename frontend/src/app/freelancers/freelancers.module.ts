@@ -6,6 +6,12 @@ import { PostulacionesListComponent } from './postulaciones/postulaciones-list/p
 import { NewPostulacionComponent } from './postulaciones/new-postulacion/new-postulacion.component';
 import { EditPostulacionComponent } from './postulaciones/edit-postulacion/edit-postulacion.component';
 import { LayoutComponent } from './layout/layout.component';
+import { HomeComponent } from './home/home.component';
+import {SharedModule} from "../shared/shared.module";
+import {MaterialModule} from "../material/material.module";
+import {FlexLayoutModule} from "@angular/flex-layout";
+import { TrabajoListComponent } from './trabajos/trabajo-list/trabajo-list.component';
+import { DetailPostulacionComponent } from './postulaciones/detail-postulacion/detail-postulacion.component';
 
 
 @NgModule({
@@ -13,11 +19,17 @@ import { LayoutComponent } from './layout/layout.component';
     PostulacionesListComponent,
     NewPostulacionComponent,
     EditPostulacionComponent,
-    LayoutComponent
+    LayoutComponent,
+    HomeComponent,
+    TrabajoListComponent,
+    DetailPostulacionComponent,
   ],
   imports: [
     CommonModule,
-    FreelancersRoutingModule
+    FreelancersRoutingModule,
+    SharedModule,
+    MaterialModule,
+    FlexLayoutModule
   ]
 })
 export class FreelancersModule { }

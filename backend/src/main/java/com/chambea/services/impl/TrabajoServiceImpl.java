@@ -1,9 +1,6 @@
 package com.chambea.services.impl;
 
-import com.chambea.model.Duracion;
-import com.chambea.model.Empleador;
-import com.chambea.model.RequiereHabilidad;
-import com.chambea.model.Trabajo;
+import com.chambea.model.*;
 import com.chambea.repositories.DuracionRepository;
 import com.chambea.repositories.TrabajoRepository;
 import com.chambea.services.TrabajoService;
@@ -13,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
@@ -43,7 +41,29 @@ public class TrabajoServiceImpl implements TrabajoService {
 
     @Override
     public Trabajo updateTrabajo(Trabajo trabajo) {
-        return  trabajoRepository.save(trabajo);
+
+        Trabajo trabajoFromBd = this.trabajoRepository.findById(trabajo.getIdTrabajo()).get();
+        trabajoFromBd.setTitulo(trabajo.getTitulo());
+        trabajoFromBd.setDescripcion(trabajo.getDescripcion());
+        trabajoFromBd.setDuracion(trabajo.getDuracion());
+
+        for (RequiereHabilidad habilidad : trabajoFromBd.getHabilidades()){
+
+            habilidad.setIdTrabajo(null);
+            log.error("llegue");
+        }
+        for (RequiereHabilidad habilidad : trabajo.getHabilidades()){
+            habilidad.setIdTrabajo(trabajo);
+            log.error("llegue");
+        }
+
+        trabajoFromBd.getHabilidades().clear();
+        trabajo.getHabilidades().forEach(
+                line -> {
+                    trabajoFromBd.getHabilidades().add(line);
+                }
+        );
+        return  trabajoRepository.save(trabajoFromBd);
     }
 
     @Override

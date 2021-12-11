@@ -54,7 +54,8 @@ public class Trabajo {
     @OneToMany(
             cascade = CascadeType.ALL,
             mappedBy = "idTrabajo",
-            fetch = FetchType.LAZY
+            fetch = FetchType.LAZY,
+            orphanRemoval = true
     )
     //private Set<RequiereHabilidad> habilidades;
     private List<RequiereHabilidad> habilidades;

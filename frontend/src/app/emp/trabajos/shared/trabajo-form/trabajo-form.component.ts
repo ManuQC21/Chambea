@@ -66,6 +66,10 @@ export class TrabajoFormComponent implements OnInit {
         ],
       }
     )
+
+
+
+
   }
 
   save(){
@@ -74,13 +78,45 @@ export class TrabajoFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if (this.trabajo){
+
+      this.form.patchValue(
+        {
+          titulo: this.trabajo.titulo,
+          descripcion: this.trabajo.descripcion,
+          duracion: this.trabajo.duracion,
+          habilidades: this.trabajo.habilidades
+        }
+      )
+      const selectedDuracion = JSON.stringify(this.trabajo.duracion);
+
+      console.log(selectedDuracion)
+
+      let toPatch = {
+        idDuracion : 0,
+        descripcion: ''
+      }
+
+      toPatch.idDuracion = this.trabajo.duracion.idDuracion
+      toPatch.descripcion = this.trabajo.duracion.descripcion
+
+      // @ts-ignore
+
+      // @ts-ignore
+      //console.log('parche')
+      //console.log(this.form.get('duracion')?.value)
+      //console.log(this.form.get('duracion')?.value == this.trabajo.duracion)
+      //console.log(this.trabajo.duracion)
+      //console.log(this.form.get('habilidades')?.value == this.trabajo.habilidades)
+    }
   }
 
   getHabilidades(): void{
     this.habilidadService.getAll().subscribe(
       data => {
         this.habilidades = data;
-        console.log(data)
+        //console.log(data)
+
       }
     )
   }
@@ -95,21 +131,3 @@ export class TrabajoFormComponent implements OnInit {
 
 
 }
-
-/*
-idTrabajo?: number,
-  titulo: string,
-  descripcion: string,
-  duracion: {
-    idDuracion: number,
-    descripcion: string
-  },
-  empleador: {
-    idEmpleador: number,
-    fechaRegistro?: string,
-    compania?: string
-  },
-  habilidades: RequiereHabilidad[],
-  postulaciones? : Object[],
-  fecha?: string
- */

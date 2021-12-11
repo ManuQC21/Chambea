@@ -42,8 +42,8 @@
             Duracion estimada
           </mat-label>
           <mat-select  formControlName="duracion">
-            <mat-option *ngFor="let duracion of duraciones" [value]="duracion">
-              {{ duracion.descripcion }}
+            <mat-option *ngFor="let dur of duraciones" [value]="dur">
+              {{ dur.descripcion }}
             </mat-option>
           </mat-select>
         </mat-form-field>
@@ -62,7 +62,7 @@
 
 
         <div fxLayoutAlign="row" fxLayoutAlign="center" fxLayoutGap="10px">
-          <button mat-button fxFlex="40">Cancelar</button>
+          <button mat-button fxFlex="40" routerLink="/emp/home">Cancelar</button>
 
           <button
             fxFlex="40"

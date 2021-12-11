@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {TrabajoService} from "../shared/trabajo.service";
 import {Trabajo} from "../../../model/trabajo.model";
 import {ActivatedRoute, NavigationEnd, NavigationStart, Router} from "@angular/router";
 import {DetailTrabajoService} from "./detail-trabajo.service";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-detail-trabajo',
@@ -10,10 +11,11 @@ import {DetailTrabajoService} from "./detail-trabajo.service";
   styleUrls: ['./detail-trabajo.component.css'],
   providers: [ DetailTrabajoService ]
 })
-export class DetailTrabajoComponent implements OnInit {
+export class DetailTrabajoComponent implements OnInit, OnDestroy {
 
   trabajo?: Trabajo
   currentRoute: any
+  routerSubscription = new Subscription()
 
 
   constructor(
@@ -24,11 +26,12 @@ export class DetailTrabajoComponent implements OnInit {
   )
   {
     this.currentRoute = "";
-    this.router.events.subscribe((event) => {
+    this.routerSubscription = this.router.events.subscribe((event) => {
       if (event instanceof NavigationStart) {
       }
       if (event instanceof NavigationEnd) {
         this.currentRoute = event.url.split('/').pop()
+        this.getTrabajo()
       }
   });
   }
@@ -45,7 +48,6 @@ export class DetailTrabajoComponent implements OnInit {
         (data)=> {
           this.trabajo = data;
           this.enviarTrabajo(this.trabajo)
-
         }
       )
   }
@@ -53,6 +55,10 @@ export class DetailTrabajoComponent implements OnInit {
 
   enviarTrabajo(trabajo:Trabajo){
     this.detailService.sendTrabajo(trabajo)
+  }
+
+  ngOnDestroy(): void {
+    this.routerSubscription.unsubscribe();
   }
 
   /**
