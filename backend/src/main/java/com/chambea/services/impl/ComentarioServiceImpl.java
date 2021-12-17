@@ -1,45 +1,37 @@
 package com.chambea.services.impl;
 
-
 import com.chambea.model.Comentario;
 import com.chambea.repositories.ComentarioRepository;
 import com.chambea.services.ComentarioService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class ComentarioServiceImpl implements ComentarioService {
 
-    private final ComentarioRepository commentRepository;
+    private final ComentarioRepository comentarioRepository;
 
-    @Autowired
-    public ComentarioServiceImpl(ComentarioRepository commentRepository) {
-        this.commentRepository = commentRepository;
+    @Override
+    public Comentario createComentario(Comentario comentario) {
+        return comentarioRepository.save(comentario);
     }
 
     @Override
-    public Comentario crearCalificacionyComentario(Comentario comment) {
-        return commentRepository.save(comment);
-    }
-
     public List<Comentario> getAll() {
-        return this.commentRepository.findAll();
-    }
-
-    public Comentario save(Comentario comment) {
-        return commentRepository.saveAndFlush(comment);
-    }
+        return this.comentarioRepository.findAll();}
 
     @Override
-    public void delete(Comentario comment) {
-        commentRepository.delete(comment);
+    public Comentario UpdateCalificationAndComentario(Comentario comentario) {
+
+        Comentario comentario1 = this.comentarioRepository.save(comentario);
+        return comentario1;
     }
-
-
-    public List<Comentario> getComentario() {
-        return this.commentRepository.findAll();
+    @Override
+    public void deleteCalificationAndComentario(Integer id) {
+        this.comentarioRepository.deleteById(id);
     }
 
 }
