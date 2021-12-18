@@ -37,7 +37,7 @@ public class CertificadoController{
     }
 
     @PutMapping
-    public ResponseEntity<Certificado> updateFreelancer(@RequestParam Certificado certificado){
+    public ResponseEntity<Certificado> updateFreelancer(@RequestBody Certificado certificado){
         Certificado certificado1 = this.certificadoService.UpdateCertificado(certificado);
         return new ResponseEntity<Certificado>(certificado1, HttpStatus.OK);
     }
