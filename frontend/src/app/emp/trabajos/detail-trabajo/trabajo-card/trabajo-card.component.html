@@ -28,7 +28,7 @@
     <section class="" style="padding: 0 16px; margin: 20px 16px 16px 16px">
       <h4>Actividad</h4>
       <section class="text-secondary">
-        <p>Propuestas: {{trabajo.postulaciones.length}}</p>
+        <p *ngIf="postulaciones">Propuestas: {{postulaciones.length}}</p>
         <p>Mensajes: {{0}}</p>
       </section>
     </section>

@@ -1,1 +1,42 @@
-<p>trabajo-list works!</p>
+<div class="outer-container container" >
+
+
+
+  <div class="container mt-5 mb-4">
+    <mat-card>
+
+      <mat-card-header>
+        <h3>Buscar</h3>
+      </mat-card-header>
+
+      <mat-divider style="border-top-width: 3px"></mat-divider>
+
+      <div class="search-container" fxLayout="row" >
+        <div fxFlex="70">
+          <div class="search-bar" fxLayout="row"  fxLayoutAlign="start start">
+            <div class="input-wrapper" fxFill>
+              <input  matInput type="search" placeholder="Buscar">
+            </div>
+            <div class="search-icon" fxLayoutAlign="center center" fxFlexAlign="">
+              <mat-icon>search</mat-icon>
+            </div>
+          </div>
+        </div>
+
+
+        <div fxFlex="30">
+        </div>
+      </div>
+
+      <mat-card-content>
+        <div *ngFor="let trabajo of trabajos; index as i">
+          <app-trabajo [trabajo]="trabajo"></app-trabajo>
+        </div>
+      </mat-card-content>
+
+    </mat-card>
+  </div>
+
+</div>
+
+

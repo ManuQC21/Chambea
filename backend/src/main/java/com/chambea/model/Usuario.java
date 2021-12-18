@@ -35,10 +35,10 @@ public class Usuario {
     @Column(name="apellidos", nullable=false, length=64)
     private String apellidos;
 
-    @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
     private Freelancer freelancer;
 
-    @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
     private Empleador empleador;
 
 

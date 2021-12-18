@@ -1,6 +1,7 @@
 import {Habilidad} from "./habilidad.model";
 import {RequiereHabilidad} from "./requiere-habilidad.model";
 import {Duracion} from "./duracion.model";
+import {Postulacion} from "./postulacion.model";
 
 export interface Trabajo {
   idTrabajo?: number,
@@ -13,6 +14,6 @@ export interface Trabajo {
     compania?: string
   },
   habilidades: RequiereHabilidad[],
-  postulaciones : Object[],
+  //postulaciones : Postulacion[],
   fecha?: string
 }

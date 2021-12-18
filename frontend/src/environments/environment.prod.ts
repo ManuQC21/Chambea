@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  apiBase: "http://localhost:8080/api/v1"
+  apiBase: "http://chambea-api.herokuapp.com/api/v1"
 
 };

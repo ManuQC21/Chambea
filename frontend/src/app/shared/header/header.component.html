@@ -27,12 +27,12 @@
     <div *ngIf="actualRol=='freelancer'">
       <button  mat-button [mat-menu-trigger-for]="menuT">Trabajos</button>
       <mat-menu #menuT="matMenu">
-        <button [routerLink]="['./home']" mat-menu-item>Buscar Trabajos</button>
+        <button [routerLink]="['./trabajos']" mat-menu-item>Buscar Trabajos</button>
       </mat-menu>
 
       <button mat-button  [mat-menu-trigger-for]="menuF">Postulaciones</button>
       <mat-menu #menuF="matMenu">
-        <button mat-menu-item>Mis Postulaciones</button>
+        <button [routerLink]="['./home']" mat-menu-item>Mis Postulaciones</button>
       </mat-menu>
     </div>
 

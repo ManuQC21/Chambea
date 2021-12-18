@@ -1,0 +1,44 @@
+
+
+mat-card{
+  padding-bottom: 0;
+  padding-top: 0;
+  padding: 0;
+}
+
+@media (min-width: 500px) {
+  .outer-container {
+    width: 800px;
+  }
+}
+
+
+h3{
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  color: #fc6e00;
+}
+
+.search-container{
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 24px;
+  margin: 15px 0;
+}
+
+
+.search-bar{
+  border: solid #e9e9e9 1px;
+  border-radius: 5px;
+}
+
+input {
+  padding: 10px;
+}
+
+.search-icon{
+  padding: 0 10px;
+  background-color: #fc6e00;
+  border-radius: 5px;
+}

@@ -1,0 +1,29 @@
+<mat-divider></mat-divider>
+
+<div [routerLink]="['../trabajo/',trabajo.idTrabajo,'detail']" *ngIf="trabajo"  class="pt-4 p-4 pb-3 trabajo-container">
+
+  <div fxLayout="row">
+    <div fxLayout="column" fxFlex="70">
+      <h2>{{trabajo.titulo}}</h2>
+      <p class="text-secondary">{{trabajo.descripcion}}</p>
+      <div class="habilidades">
+        <mat-chip-list class="mat-chip-list text-secondary" fxLayout="row">
+          <mat-chip *ngFor="let habilidad of trabajo.habilidades">
+            {{ habilidad.habilidad.descripcion}}
+          </mat-chip>
+        </mat-chip-list>
+        <p class="text-secondary mt-2">Publicado en: {{trabajo.fecha}}</p>
+      </div>
+    </div>
+
+    <div *ngIf="!enPostulacion" fxFlex="30">
+      <button mat-raised-button color="primary"  [routerLink]="['../postulacion/trabajo/',trabajo.idTrabajo] ">Realizar Postulacion</button>
+    </div>
+  </div>
+
+
+</div>
+
+<mat-divider></mat-divider>
+
+

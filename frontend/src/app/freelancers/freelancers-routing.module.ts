@@ -7,6 +7,7 @@ import {TrabajoListComponent} from "./trabajos/trabajo-list/trabajo-list.compone
 import {DetailPostulacionComponent} from "./postulaciones/detail-postulacion/detail-postulacion.component";
 import {EditPostulacionComponent} from "./postulaciones/edit-postulacion/edit-postulacion.component";
 import {NewPostulacionComponent} from "./postulaciones/new-postulacion/new-postulacion.component";
+import {PostulacionCardComponent} from "./postulaciones/detail-postulacion/postulacion-card/postulacion-card.component";
 
 const routes: Routes = [
   {
@@ -22,7 +23,7 @@ const routes: Routes = [
         component:TrabajoListComponent
       },
       {
-        path:'postulacion/new',
+        path:'postulacion/trabajo/:id',
         component:NewPostulacionComponent
       },
       {
@@ -35,7 +36,7 @@ const routes: Routes = [
           },
           {
             path:'detail',
-            component: TrabajoCardComponent
+            component: PostulacionCardComponent
           }
         ]
       },

@@ -80,6 +80,7 @@ export class TrabajoFormComponent implements OnInit {
   ngOnInit(): void {
     if (this.trabajo){
 
+      console.log(this.trabajo)
       this.form.patchValue(
         {
           titulo: this.trabajo.titulo,

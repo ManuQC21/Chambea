@@ -1,1 +1,11 @@
-<p>detail-postulacion works!</p>
+
+<div class="outer-container container" *ngIf="postulacion">
+  <mat-card class="m-0 p-0 mt-5 mb-3">
+    <app-trabajo
+      [enPostulacion]="true"
+      [trabajo]="trabajo"
+    ></app-trabajo>
+  </mat-card>
+
+  <router-outlet></router-outlet>
+</div>

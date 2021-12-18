@@ -1,1 +1,21 @@
-<p>postulaciones-list works!</p>
+
+<div class="container">
+  <mat-card>
+
+    <mat-card-title class="p-3">
+      <span class="fw-bold">Mis Postulaciones</span>
+      <div class="pull-right">
+        <h3 style="color: #f45100">Ver todos</h3>
+      </div>
+    </mat-card-title>
+
+
+    <mat-card-content>
+      <div class="outer-container" *ngFor="let postulacion of postulaciones; index as i">
+        <app-postulacion [postulacion]="postulacion"></app-postulacion>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+
+</div>

@@ -1,0 +1,12 @@
+
+<mat-divider></mat-divider>
+<div [routerLink]="['../postulacion/',postulacion.idPostulacion,'detail']"
+     *ngIf="postulacion"  class="pt-4 p-4 pb-3 postulacion-container">
+
+  <div fxLayout="column">
+      <div><h2>Trabajo: {{postulacion.trabajo.titulo}}</h2></div>
+      <div><p class="text-secondary">Postulacion realizada en: {{postulacion.fecha}}</p></div>
+      <div><p>{{postulacion.descripcion}}</p></div>
+  </div>
+</div>
+<mat-divider></mat-divider>

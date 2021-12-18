@@ -2,6 +2,7 @@ package com.chambea.model;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -61,6 +62,7 @@ public class Trabajo {
     private List<RequiereHabilidad> habilidades;
 
 
+    @JsonIgnore
     @OneToMany(
             cascade = CascadeType.ALL,
             mappedBy = "trabajo",

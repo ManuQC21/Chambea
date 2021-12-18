@@ -12,6 +12,13 @@ import {MaterialModule} from "../material/material.module";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import { TrabajoListComponent } from './trabajos/trabajo-list/trabajo-list.component';
 import { DetailPostulacionComponent } from './postulaciones/detail-postulacion/detail-postulacion.component';
+import { TrabajoComponent } from './trabajos/trabajo/trabajo.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import { PostulacionFormComponent } from './postulaciones/shared/postulacion-form/postulacion-form.component';
+import { PostulacionComponent } from './postulaciones/postulaciones-list/postulacion/postulacion.component';
+import {HttpClientModule} from "@angular/common/http";
+import { PostulacionCardComponent } from './postulaciones/detail-postulacion/postulacion-card/postulacion-card.component';
+import {IconsModule} from "../icons/icons.module";
 
 
 @NgModule({
@@ -23,13 +30,20 @@ import { DetailPostulacionComponent } from './postulaciones/detail-postulacion/d
     HomeComponent,
     TrabajoListComponent,
     DetailPostulacionComponent,
+    TrabajoComponent,
+    PostulacionFormComponent,
+    PostulacionComponent,
+    PostulacionCardComponent,
   ],
-  imports: [
-    CommonModule,
-    FreelancersRoutingModule,
-    SharedModule,
-    MaterialModule,
-    FlexLayoutModule
-  ]
+    imports: [
+        CommonModule,
+        FreelancersRoutingModule,
+        SharedModule,
+        MaterialModule,
+        FlexLayoutModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        IconsModule
+    ]
 })
 export class FreelancersModule { }

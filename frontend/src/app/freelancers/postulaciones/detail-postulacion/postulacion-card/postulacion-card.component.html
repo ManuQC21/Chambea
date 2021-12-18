@@ -1,0 +1,33 @@
+<mat-card *ngIf="postulacion" class="" fxLayout="row">
+  <div fxFlex="70">
+    <mat-card-header class="pt-4">
+      <h3>Detalles de la Postulacion</h3>
+    </mat-card-header>
+
+    <hr style="width: 92%; margin: auto">
+
+    <section class="" style="padding: 0 16px; margin: 10px 16px 16px 16px">
+      <p>{{postulacion.descripcion}}</p>
+      <p class="text-secondary">Publicado en {{postulacion.fecha}}</p>
+    </section>
+
+    <hr style="width: 92%; margin: auto">
+
+    <section *ngIf="postulacion.estado" class="" style="padding: 0 16px; margin: 20px 16px 16px 16px">
+      <p class="">Estado: {{postulacion.estado.descripcion}}</p>
+    </section>
+
+  </div>
+
+  <mat-divider vertical style="border-right-width: 2px"></mat-divider>
+  <div style="background-color: #f1f2f4" fxFlex="">
+
+    <mat-nav-list *ngIf="postulacion.idPostulacion">
+      <a mat-list-item routerLink="../edit" ><fa-icon [icon]="['far', 'edit']" transform="grow-3"></fa-icon> Editar </a>
+      <a mat-list-item (click)="delete(postulacion.idPostulacion)" ><fa-icon [icon]="['fas', 'slash']" transform="grow-3"></fa-icon> Eliminar </a>
+      <a mat-list-item  ><fa-icon [icon]="['fas', 'thumbtack']" transform="grow-3"></fa-icon>Reusar </a>
+    </mat-nav-list>
+  </div>
+
+
+</mat-card>

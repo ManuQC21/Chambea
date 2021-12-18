@@ -1,1 +1,9 @@
-<p>edit-postulacion works!</p>
+
+  <mat-card>
+    <h2>Editar Postulacion</h2>
+    <h3>Carta de Presentacion</h3>
+    <app-postulacion-form
+      [postulacion]="postulacion"
+      (onSubmit)="updatePostulacion($event)">
+    </app-postulacion-form>
+  </mat-card>

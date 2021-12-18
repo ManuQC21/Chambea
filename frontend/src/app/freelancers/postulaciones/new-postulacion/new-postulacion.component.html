@@ -1,1 +1,30 @@
-<p>new-postulacion works!</p>
+<div class="outer-container container" >
+
+  <div class="container mt-5 mb-5">
+    <mat-card>
+        <mat-card-title class="p-3">
+          <div>
+            <h1 style="color: #f45100">Realizar Postulacion</h1>
+          </div>
+        </mat-card-title>
+
+      <mat-divider style="border-top-width: 3px"></mat-divider>
+
+      <mat-card-content class=" mb-3">
+        <section class="p-3 mt-4 mb-3"><h2>Detalles del trabajo</h2></section>
+        <app-trabajo [enPostulacion]="true" [trabajo]="trabajo"></app-trabajo>
+
+        <mat-divider style="border-top-width: 3px"></mat-divider>
+
+        <div class="form-wrapper m-3 pb-4">
+          <section class="pt-3 pb-3 mt-4 mb-3"><h2>Carta de Presentacion</h2></section>
+          <app-postulacion-form (onSubmit)="createPostulacion($event)"></app-postulacion-form>
+        </div>
+      </mat-card-content>
+
+    </mat-card>
+  </div>
+
+</div>
+
+

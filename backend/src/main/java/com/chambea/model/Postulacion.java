@@ -3,7 +3,10 @@ package com.chambea.model;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jdk.jfr.Timespan;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -12,6 +15,9 @@ import java.util.Calendar;
 @Entity
 @Data
 @Table(name="postulacion")
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Postulacion {
 
     @Id
@@ -30,7 +36,7 @@ public class Postulacion {
     )
     private Freelancer freelancer;
 
-    @JsonIgnore
+    //@JsonIgnore
     @ManyToOne
     @JoinColumn(
             name="id_trabajo",
@@ -42,9 +48,15 @@ public class Postulacion {
     @ManyToOne
     @JoinColumn(
             name="id_estado_propuesta",
+            updatable = true,
+            insertable = true,
             nullable = false,
-            foreignKey = @ForeignKey(name="FK_postulacion_estado")
+            foreignKey = @ForeignKey(name="FK_postulacion_estado"
+            )
     )
     private EstadoPropuesta estado;
+
+    @Column(name = "descripcion", nullable = false, length = 256)
+    private String descripcion;
 
 }

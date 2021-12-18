@@ -1,0 +1,18 @@
+
+
+@media (min-width: 500px) {
+  .outer-container {
+    width: 800px;
+  }
+}
+
+h2{
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+
+.mat-card{
+  margin: 0;
+  padding: 0;
+}
