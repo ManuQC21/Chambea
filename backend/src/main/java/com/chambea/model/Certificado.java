@@ -21,7 +21,6 @@ public class Certificado {
             foreignKey = @ForeignKey(name="FK_certificado_freelancer"))
     private Freelancer freelancer;
 
-
     @Column(name="proveedor", nullable=false, length=64)
     private String proveedor;
 
