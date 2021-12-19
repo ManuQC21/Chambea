@@ -7,6 +7,8 @@ import {EditTrabajoComponent} from "./trabajos/edit-trabajo/edit-trabajo.compone
 import {DetailTrabajoComponent} from "./trabajos/detail-trabajo/detail-trabajo.component";
 import {PropuestasComponent} from "./trabajos/detail-trabajo/propuestas/propuestas.component";
 import {TrabajoCardComponent} from "./trabajos/detail-trabajo/trabajo-card/trabajo-card.component";
+import { NewCalificationComponent } from './calificacion/new-calification/new-calification.component';
+import { EditCalificationComponent } from './calificacion/edit-calification/edit-calification.component';
 
 const routes: Routes = [
   {
@@ -39,6 +41,14 @@ const routes: Routes = [
           }
         ]
       },
+      {
+        path: 'calificacion/new',
+        component:NewCalificationComponent
+      },
+      {
+        path: 'calificacion/edit',
+        component:EditCalificationComponent
+      }
     ]
   }
 ];

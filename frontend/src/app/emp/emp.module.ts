@@ -18,6 +18,11 @@ import { BreadcrumbComponent } from './trabajos/detail-trabajo/breadcrumb/breadc
 import { PropuestasComponent } from './trabajos/detail-trabajo/propuestas/propuestas.component';
 import { TrabajoFormComponent } from './trabajos/shared/trabajo-form/trabajo-form.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { CalificacionComponent } from './calificacion/calificacion.component';
+import { NewCalificationComponent } from './calificacion/new-calification/new-calification.component';
+import { EditCalificationComponent } from './calificacion/edit-calification/edit-calification.component';
+import { CalificationListComponent } from './calificacion/calification-list/calification-list.component';
+import { DetailCalificationComponent } from './calificacion/detail-calification/detail-calification.component';
 
 
 @NgModule({
@@ -33,6 +38,11 @@ import {ReactiveFormsModule} from "@angular/forms";
     BreadcrumbComponent,
     PropuestasComponent,
     TrabajoFormComponent,
+    CalificacionComponent,
+    NewCalificationComponent,
+    EditCalificationComponent,
+    CalificationListComponent,
+    DetailCalificationComponent,
   ],
     imports: [
         CommonModule,
