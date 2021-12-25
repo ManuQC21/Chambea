@@ -13,7 +13,7 @@ import java.util.List;
 public class UsuarioController {
 
     private final UsuarioService usuarioService;
-
+    //feliz navidad a todos mis compañeros del proyecto :D
     UsuarioController(UsuarioService usuarioService){
         this.usuarioService = usuarioService;
     }
